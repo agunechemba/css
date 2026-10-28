@@ -1,0 +1,3676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Notes for Professionals — A Storybook for Curious Minds</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="https://pph.name.ng/pphlogo.svg">
+</head>
+<body>
+
+<!-- ============================================================
+     COVER
+     ============================================================ -->
+<section id="cover" class="book-page cover-page">
+  <div class="cover-content">
+    <p class="cover-series">Notes for Professionals</p>
+    <h1 class="cover-title">CSS Notes for Professionals</h1>
+    <p class="cover-subtitle">A practical guide to the language of the web — one property at a time.</p>
+    <p class="cover-author">Compiled from Stack Overflow Documentation</p>
+    <p class="cover-note">Five parts. Fifty-six chapters.<br>One language of the web.</p>
+    <p class="cover-credit">
+      Refactored &amp; illustrated by<br>
+      <a href="https://agunechemba.name.ng" target="_blank" rel="noopener">Agunechemba Ekene</a>
+    </p>
+  </div>
+  <div class="book-nav">
+    <button class="nav-button" data-nav="next">Begin the Journey →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     TABLE OF CONTENTS
+     ============================================================ -->
+<section id="toc" class="book-page toc-page">
+  <div class="chapter-header">
+    <h2>Table of Contents</h2>
+    <p class="chapter-tagline">Where would you like to go?</p>
+  </div>
+
+  <div class="toc-part">
+    <h3>Part One: CSS Foundations</h3>
+    <ol>
+      <li><a href="#ch-getting-started-with-css">Getting started with CSS</a></li>
+      <li><a href="#ch-structure-and-formatting-of-a-css-rule">Structure and Formatting of a CSS Rule</a></li>
+      <li><a href="#ch-comments">Comments</a></li>
+      <li><a href="#ch-selectors">Selectors</a></li>
+      <li><a href="#ch-backgrounds">Backgrounds</a></li>
+      <li><a href="#ch-centering">Centering</a></li>
+      <li><a href="#ch-the-box-model">The Box Model</a></li>
+    </ol>
+  </div>
+
+  <div class="toc-part">
+    <h3>Part Two: Spacing &amp; Typography</h3>
+    <ol start="8">
+      <li><a href="#ch-margins">Margins</a></li>
+      <li><a href="#ch-padding">Padding</a></li>
+      <li><a href="#ch-border">Border</a></li>
+      <li><a href="#ch-outlines">Outlines</a></li>
+      <li><a href="#ch-overflow">Overflow</a></li>
+      <li><a href="#ch-media-queries">Media Queries</a></li>
+      <li><a href="#ch-floats">Floats</a></li>
+      <li><a href="#ch-typography">Typography</a></li>
+      <li><a href="#ch-flexible-box-layout">Flexible Box Layout (Flexbox)</a></li>
+    </ol>
+  </div>
+
+  <div class="toc-part">
+    <h3>Part Three: Visual Styling &amp; Animation</h3>
+    <ol start="17">
+      <li><a href="#ch-cascading-and-specificity">Cascading and Specificity</a></li>
+      <li><a href="#ch-colors">Colors</a></li>
+      <li><a href="#ch-opacity">Opacity</a></li>
+      <li><a href="#ch-length-units">Length Units</a></li>
+      <li><a href="#ch-pseudo-elements">Pseudo-Elements</a></li>
+      <li><a href="#ch-positioning">Positioning</a></li>
+      <li><a href="#ch-layout-control">Layout Control</a></li>
+      <li><a href="#ch-grid">Grid</a></li>
+      <li><a href="#ch-tables">Tables</a></li>
+      <li><a href="#ch-transitions">Transitions</a></li>
+      <li><a href="#ch-animations">Animations</a></li>
+      <li><a href="#ch-2d-transforms">2D Transforms</a></li>
+      <li><a href="#ch-3d-transforms">3D Transforms</a></li>
+      <li><a href="#ch-filter-property">Filter Property</a></li>
+      <li><a href="#ch-cursor-styling">Cursor Styling</a></li>
+      <li><a href="#ch-box-shadow">box-shadow</a></li>
+    </ol>
+  </div>
+
+  <div class="toc-part">
+    <h3>Part Four: Advanced Layout &amp; Techniques</h3>
+    <ol start="33">
+      <li><a href="#ch-shapes-for-floats">Shapes for Floats</a></li>
+      <li><a href="#ch-list-styles">List Styles</a></li>
+      <li><a href="#ch-counters">Counters</a></li>
+      <li><a href="#ch-functions">Functions</a></li>
+      <li><a href="#ch-css-variables">CSS Variables</a></li>
+      <li><a href="#ch-single-element-shapes">Single Element Shapes</a></li>
+      <li><a href="#ch-columns">Columns</a></li>
+      <li><a href="#ch-multiple-columns">Multiple columns</a></li>
+      <li><a href="#ch-inline-block-layout">Inline-Block Layout</a></li>
+      <li><a href="#ch-inheritance">Inheritance</a></li>
+      <li><a href="#ch-css-image-sprites">CSS Image Sprites</a></li>
+      <li><a href="#ch-clipping-and-masking">Clipping and Masking</a></li>
+    </ol>
+  </div>
+
+  <div class="toc-part">
+    <h3>Part Five: Professional CSS</h3>
+    <ol start="45">
+      <li><a href="#ch-fragmentation">Fragmentation</a></li>
+      <li><a href="#ch-css-object-model">CSS Object Model (CSSOM)</a></li>
+      <li><a href="#ch-feature-queries">Feature Queries</a></li>
+      <li><a href="#ch-stacking-context">Stacking Context</a></li>
+      <li><a href="#ch-block-formatting-contexts">Block Formatting Contexts</a></li>
+      <li><a href="#ch-vertical-centering">Vertical Centering</a></li>
+      <li><a href="#ch-object-fit-and-placement">Object Fit and Placement</a></li>
+      <li><a href="#ch-css-design-patterns">CSS design patterns</a></li>
+      <li><a href="#ch-browser-support-and-prefixes">Browser Support &amp; Prefixes</a></li>
+      <li><a href="#ch-normalizing-browser-styles">Normalizing Browser Styles</a></li>
+      <li><a href="#ch-internet-explorer-hacks">Internet Explorer Hacks</a></li>
+      <li><a href="#ch-performance">Performance</a></li>
+    </ol>
+  </div>
+
+
+   <div class="toc-part">
+  <h3>Back Matter</h3>
+  <ul>
+    <li><a href="#glossary">Glossary</a></li>
+    <li><a href="#appendix">Appendix</a></li>
+  </ul>
+</div>
+   
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Cover</button>
+    <button class="nav-button" data-nav="next">Part One →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     PART ONE DIVIDER
+     ============================================================ -->
+<section id="part-one" class="book-page cover-page part-page part-one">
+  <div class="cover-content">
+    <p class="part-number">Part One</p>
+    <h1>CSS Foundations</h1>
+    <p class="part-desc">From linking a stylesheet to understanding the box model — the first principles of CSS.</p>
+  </div>
+  <div class="book-nav">
+    <button class="nav-button" data-nav="next">Begin Chapter 1 →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 1
+     ============================================================ -->
+<section id="ch-getting-started-with-css" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part One · CSS Foundations · Chapter 1</p>
+    <h2>Getting started with CSS</h2>
+    <p class="chapter-tagline">Three ways to bring style to a page — and why one of them is the one you want.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS can be attached to a page in three ways. The first and best is the <strong>external stylesheet</strong>: a separate <code>.css</code> file linked from the <code>&lt;head&gt;</code> with a <code>&lt;link&gt;</code> element whose <code>rel</code> is <code>"stylesheet"</code> and whose <code>href</code> points to the file. Because the same file can be reused across every page of a site, changing one colour there changes it everywhere.</p>
+    <p>The second way is <strong>internal styles</strong>: a <code>&lt;style&gt;</code> block inside the <code>&lt;head&gt;</code>. It works, but only for the page it lives in. The third is <strong>inline styles</strong>: a <code>style</code> attribute on the element itself. Inline styles override everything, which makes them useful for email templates and quick debugging but poor for maintainable work.</p>
+    <p>Two further tools round out the family. The <code>@import</code> rule pulls in another stylesheet from inside a stylesheet; and JavaScript can change any element's styles by reaching into its <code>style</code> property — <code>el.style.opacity = 0.5</code>, or <code>el.style.fontFamily = 'sans-serif'</code>.</p>
+    <pre class="code-example"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello world!&lt;/h1&gt;
+    &lt;p&gt;I ♥ CSS&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <p>Put the <code>&lt;link&gt;</code> in the <code>&lt;head&gt;</code>, before the elements it styles, or the browser will flash unstyled content while it waits for the CSS to arrive.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>External stylesheets are the recommended way to apply CSS — one file, many pages.</li>
+      <li>Internal styles live in a <code>&lt;style&gt;</code> block inside the document; inline styles live on the element itself.</li>
+      <li><code>@import</code> brings in another stylesheet from inside a stylesheet.</li>
+      <li>JavaScript can read and change any element's styles through its <code>style</code> property.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Rewrite the inline example as an external stylesheet.</li>
+      <li>Why is an external stylesheet usually better than inline styles?</li>
+      <li>What does <code>rel="stylesheet"</code> actually tell the browser?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Part One</button>
+    <button class="nav-button" data-nav="next">Structure and Formatting of a CSS Rule →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 2
+     ============================================================ -->
+<section id="ch-structure-and-formatting-of-a-css-rule" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part One · CSS Foundations · Chapter 2</p>
+    <h2>Structure and Formatting of a CSS Rule</h2>
+    <p class="chapter-tagline">Selectors, declarations, and the commas that bind them.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>A CSS rule has two parts: a <strong>selector</strong> that names what to style, and a <strong>declaration block</strong> (curly braces) containing one or more declarations. Each declaration is a <strong>property</strong>, a colon, a <strong>value</strong>, and a semicolon — <code>h1 { color: green; }</code>.</p>
+    <p>Some properties take a <strong>property list</strong>: multiple values separated by commas. <code>text-shadow: yellow 0 3px, green 4px 4px 10px;</code> paints two shadows. The order matters. Others take shorthand values — <code>margin: 10px 15px</code> is the same as <code>margin: 10px 15px 10px 15px</code>.</p>
+    <p>When several selectors share the same declarations, group them with a comma. <code>div, p { color: blue }</code> styles every div and every paragraph. Without the comma, <code>div p { color: blue }</code> would style only paragraphs <em>inside</em> divs.</p>
+    <pre class="code-example"><code>/* One rule, several selectors */
+div, p, .blue, #first, div span {
+  color: blue;
+}
+
+/* One rule, several values */
+span {
+  text-shadow: yellow 0 3px, green 4px 4px 10px;
+}</code></pre>
+    <p>Read rules from the selector inward. The selector decides which elements are touched; the declarations decide how. Get the shape of a rule right, and every page that follows becomes easier.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>A rule is a selector plus a declaration block.</li>
+      <li>Group selectors with commas to share declarations.</li>
+      <li>Some properties take comma-separated value lists.</li>
+      <li>Shorthand properties abbreviate several longhands in one declaration.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Rewrite <code>div { color: blue } p { color: blue }</code> as a single rule.</li>
+      <li>What is the difference between <code>div, p {…}</code> and <code>div p {…}</code>?</li>
+      <li>Expand <code>margin: 10px 15px</code> into four longhand declarations.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Getting started with CSS</button>
+    <button class="nav-button" data-nav="next">Comments →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 3
+     ============================================================ -->
+<section id="ch-comments" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part One · CSS Foundations · Chapter 3</p>
+    <h2>Comments</h2>
+    <p class="chapter-tagline">Notes to your future self, invisible to the browser.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS comments begin with <code>/*</code> and end with <code>*/</code>. Anything between them is ignored by the browser, which makes comments the perfect place to leave a note, disable a declaration while debugging, or section off a long stylesheet.</p>
+    <p>Comments can stand on their own or sit inside a rule. They can span one line or many. There is no single-line <code>//</code> comment in CSS — that syntax belongs to JavaScript, Sass, and Less, not to plain stylesheets.</p>
+    <pre class="code-example"><code>/* This is a CSS comment */
+div {
+  color: red;
+  /* This is also a CSS comment */
+}
+
+/*
+   Multiple-line comment.
+   Useful for disabling a block while debugging.
+*/</code></pre>
+    <p>A well-placed comment costs a few keystrokes and saves a future reader ten minutes. Use them to explain <em>why</em>, not <em>what</em> — the browser already knows what.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Comments use <code>/* … */</code>; CSS has no <code>//</code> single-line comment.</li>
+      <li>Comments can sit outside or inside a declaration block.</li>
+      <li>Use comments to explain reasoning, not to restate the code.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Comment out the <code>color</code> declaration in a rule and reload the page.</li>
+      <li>Why does CSS not use <code>//</code> like JavaScript does?</li>
+      <li>Write a one-line comment that explains why a colour is red.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Structure and Formatting of a CSS Rule</button>
+    <button class="nav-button" data-nav="next">Selectors →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 4
+     ============================================================ -->
+<section id="ch-selectors" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part One · CSS Foundations · Chapter 4</p>
+    <h2>Selectors</h2>
+    <p class="chapter-tagline">How CSS knows which element you mean.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Selectors are the address system of CSS. The <strong>universal selector</strong> <code>*</code> matches every element. A <strong>tag selector</strong> matches a tag — <code>div</code>, <code>p</code>. A <strong>class selector</strong> matches any element with that class — <code>.blue</code>. An <strong>ID selector</strong> matches one element with that ID — <code>#headline</code> — and IDs must be unique on the page.</p>
+    <p><strong>Attribute selectors</strong> match on the presence or value of an attribute: <code>[disabled]</code>, <code>[type="checkbox"]</code>, <code>[href$=".pdf"]</code>, <code>[lang|="en"]</code>. <strong>Combinators</strong> describe relationships: <code>div span</code> (any descendant), <code>div &gt; span</code> (direct child), <code>a + span</code> (immediately following sibling), <code>a ~ span</code> (any following sibling).</p>
+    <p><strong>Pseudo-classes</strong> select by state or position — <code>:hover</code>, <code>:visited</code>, <code>:first-child</code>, <code>:nth-child(3)</code>, <code>:not(.example)</code>. <strong>Pseudo-elements</strong> style a part of an element — <code>::before</code>, <code>::after</code>, <code>::first-letter</code>.</p>
+    <pre class="code-example"><code>/* Attribute selector */
+input[type="checkbox"] { accent-color: green; }
+
+/* Child combinator */
+nav > a { text-decoration: none; }
+
+/* Pseudo-class */
+a:hover { text-decoration: underline; }
+
+/* Pseudo-element */
+p::first-letter { font-size: 2em; }
+
+/* Negation */
+input:not([disabled]) { background: #fff; }</code></pre>
+    <p>Selectors can be combined: <code>div.card.warning</code> matches a div with both classes; <code>#main .title</code> matches titles inside the element with id <code>main</code>.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Basic selectors: <code>*</code>, tag, <code>.class</code>, <code>#id</code>.</li>
+      <li>Attribute selectors match on presence or value; combinators express relationships.</li>
+      <li>Pseudo-classes select by state or position; pseudo-elements style sub-parts.</li>
+      <li>Combine selectors to narrow the match — <code>div.card.warning</code>.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Write a selector that matches every paragraph inside a div but not divs themselves.</li>
+      <li>What does <code>:nth-child(2n)</code> select?</li>
+      <li>Which selector wins if two rules both apply — <code>.a</code> or <code>#b</code>? Why?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Comments</button>
+    <button class="nav-button" data-nav="next">Backgrounds →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 5
+     ============================================================ -->
+<section id="ch-backgrounds" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part One · CSS Foundations · Chapter 5</p>
+    <h2>Backgrounds</h2>
+    <p class="chapter-tagline">Colours, gradients, images, and the shorthand that ties them together.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>background-color</code> property paints a solid colour behind an element. Colours can be keywords (<code>red</code>), hex codes (<code>#ff0000</code>), <code>rgb()</code>/<code>rgba()</code>, or <code>hsl()</code>/<code>hsla()</code>. The <code>transparent</code> keyword is the default; <code>inherit</code> and <code>initial</code> also work.</p>
+    <p><strong>Gradients</strong> are new image types introduced in CSS3. <code>linear-gradient()</code> flows in a direction; <code>radial-gradient()</code> radiates from a centre. Both have repeating variants. <code>background-image</code> accepts one or many <code>url()</code> references; multiple images stack in declaration order.</p>
+    <p>The <strong>shorthand</strong> <code>background</code> sets colour, image, position, size, repeat, origin, clip, and attachment in one declaration. Order does not matter, but the shorthand resets <em>every</em> previously set background property, so use longhands when you only want to tweak one.</p>
+    <pre class="code-example"><code>.gradient {
+  background: linear-gradient(to left, red, blue);
+}
+
+.pattern {
+  background: url('pattern.png') green repeat top left;
+}
+
+.hero {
+  background: #000000 url("hero.jpg") center / cover no-repeat fixed;
+}</code></pre>
+    <p><code>background-size</code> offers <code>cover</code> (fill, cropping) and <code>contain</code> (fit, letterboxing) when you need to keep the aspect ratio without picking exact pixels.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Colours can be keywords, hex, rgb(a), or hsl(a).</li>
+      <li>Gradients are images; use them with <code>background-image</code> or the shorthand.</li>
+      <li>Multiple <code>url()</code> values stack in order.</li>
+      <li>The <code>background</code> shorthand resets every background property — use longhands to tweak.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Write a linear gradient that flows from bottom to top between two colours.</li>
+      <li>What is the difference between <code>cover</code> and <code>contain</code>?</li>
+      <li>Why might the shorthand <code>background</code> surprise you when used for a single property?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Selectors</button>
+    <button class="nav-button" data-nav="next">Centering →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 6
+     ============================================================ -->
+<section id="ch-centering" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part One · CSS Foundations · Chapter 6</p>
+    <h2>Centering</h2>
+    <p class="chapter-tagline">Five reliable ways to put something in the middle.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Centring horizontally is easy: <code>text-align: center</code> for inline content, <code>margin: 0 auto</code> for block elements with a defined width, and <code>display: flex; justify-content: center;</code> for flex containers. Centring vertically used to be hard; now it is a one-liner.</p>
+    <p>The most flexible modern recipe is Flexbox: <code>display: flex; align-items: center; justify-content: center;</code> on the parent centres both axes. The <code>transform: translate(-50%, -50%)</code> technique works without a parent flexbox, positioning the element absolutely at 50% from the top and left and then pulling it back by half its own size.</p>
+    <p>Older techniques still earn their keep. <code>line-height</code> equal to the container height centres a single line of text. <code>display: table</code> plus <code>display: table-cell; vertical-align: middle;</code> centres anything, and the ghost-element trick (a <code>::before</code> with height 100%) works when heights are unknown.</p>
+    <pre class="code-example"><code>/* Flexbox — the modern favourite */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Transform — absolute and self-sizing */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}</code></pre>
+    <p>Pick the technique that matches the layout you already have. If you are using Flexbox elsewhere, use Flexbox. If the element must float free of its parent, use the transform trick.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>text-align</code> centres inline content; <code>margin: 0 auto</code> centres blocks with widths.</li>
+      <li>Flexbox centres both axes with two declarations.</li>
+      <li>The transform trick works without a flex parent.</li>
+      <li>Table display and ghost elements handle unknown heights.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Centre a fixed-size div both horizontally and vertically using Flexbox.</li>
+      <li>What does <code>transform: translate(-50%, -50%)</code> actually do?</li>
+      <li>When would you choose table display over Flexbox?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Backgrounds</button>
+    <button class="nav-button" data-nav="next">The Box Model →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 7
+     ============================================================ -->
+<section id="ch-the-box-model" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part One · CSS Foundations · Chapter 7</p>
+    <h2>The Box Model</h2>
+    <p class="chapter-tagline">Every element is a rectangle — and its edges have names.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Every element the browser lays out becomes a rectangle with four edges: the <strong>content</strong> at the centre, the <strong>padding</strong> around it, the <strong>border</strong> around the padding, and the <strong>margin</strong> around the border. The full distance an element occupies is content plus padding plus border plus margin.</p>
+    <p>By default, <code>width</code> and <code>height</code> describe the content box only. That means a <code>width: 100%</code> textarea with <code>padding: 3px</code> overflows its parent by 6 pixels. The <code>box-sizing</code> property fixes this: <code>border-box</code> makes width and height include padding and border, so <code>width: 100%</code> stays inside its container.</p>
+    <pre class="code-example"><code>/* The global border-box fix */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Now width means the visible width */
+textarea {
+  width: 100%;
+  padding: 3px;
+}</code></pre>
+    <p>Margins collapse vertically: two adjacent vertical margins merge into the larger of the two. Horizontal margins do not collapse. Padding never collapses. Understanding this keeps seemingly mysterious layout gaps from appearing between sections.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Four edges: content, padding, border, margin.</li>
+      <li><code>box-sizing: border-box</code> makes width and height include padding and border.</li>
+      <li>Vertical margins collapse; horizontal margins do not.</li>
+      <li>Padding never collapses.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Given <code>width: 100px; padding: 10px; border: 5px; margin: 20px;</code>, what is the element's total width?</li>
+      <li>Why does <code>box-sizing: border-box</code> matter for responsive forms?</li>
+      <li>What happens when two adjacent vertical margins are 10px and 15px?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Centering</button>
+    <button class="nav-button" data-nav="next">Part Two →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     PART TWO DIVIDER
+     ============================================================ -->
+<section id="part-two" class="book-page cover-page part-page part-two">
+  <div class="cover-content">
+    <p class="part-number">Part Two</p>
+    <h1>Spacing &amp; Typography</h1>
+    <p class="part-desc">Margins, padding, borders, and the art of setting type on the web.</p>
+  </div>
+  <div class="book-nav">
+    <button class="nav-button" data-nav="next">Begin Chapter 8 →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 8
+     ============================================================ -->
+<section id="ch-margins" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 8</p>
+    <h2>Margins</h2>
+    <p class="chapter-tagline">The space outside the border — and the collapsing that surprises everyone.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Margins are the empty space <em>outside</em> an element's border. The shorthand <code>margin</code> takes one to four values (top, right, bottom, left). Individual properties — <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code> — adjust one side at a time.</p>
+    <p>The most famous quirk is <strong>margin collapsing</strong>. Two vertical margins that touch merge into the larger of the two, not the sum. Two horizontal margins do not collapse — a <code>10px</code> left margin next to a <code>10px</code> right margin produces <code>20px</code> of space. Parent and first-child top margins also collapse, which is why a <code>margin-top</code> on a heading sometimes seems to escape its container.</p>
+    <p>Margins can be set to <code>auto</code> to centre blocks horizontally, and they can be negative to overlap elements without absolute positioning. Percentage margins — top and bottom included — are calculated from the parent's <em>width</em>, not its height, which is another common source of confusion.</p>
+    <pre class="code-example"><code>/* Centre a block horizontally */
+#myDiv {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Negative margin overlaps */
+#over {
+  margin-left: -20px;
+}
+
+/* Four-value shorthand */
+p {
+  margin: 0 10px 50px 100px; /* top right bottom left */
+}</code></pre>
+    <p>Choose longhand when you only want to adjust one side; choose shorthand when setting all four. Consistent margin habits keep vertical rhythm predictable.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Margin is the space outside the border; <code>margin: 0 auto</code> centres blocks horizontally.</li>
+      <li>Vertical margins collapse; horizontal margins do not.</li>
+      <li>Percentage margins on top/bottom are based on the parent's width.</li>
+      <li>Negative margins can overlap elements without absolute positioning.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Explain why <code>margin-bottom: 30px</code> on one element and <code>margin-top: 20px</code> on the next produce 30px of space, not 50px.</li>
+      <li>Centre a <code>600px</code>-wide block horizontally.</li>
+      <li>What does <code>margin: 10px 20px</code> mean?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Part Two</button>
+    <button class="nav-button" data-nav="next">Padding →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 9
+     ============================================================ -->
+<section id="ch-padding" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 9</p>
+    <h2>Padding</h2>
+    <p class="chapter-tagline">The space inside the border — where content gets room to breathe.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Padding is the space between an element's content and its border. Unlike margin, it lives inside the box, so it takes the element's background colour with it. The shorthand follows the same order as margin — top, right, bottom, left — and can take one to four values.</p>
+    <p>Padding never collapses. Two elements stacked vertically do not share or merge their padding. This makes it a reliable tool for creating interior breathing room. Negative padding is not allowed.</p>
+    <pre class="code-example"><code>/* All four sides */
+.pad-all { padding: 25px; }
+
+/* Vertical then horizontal */
+.pad-two { padding: 25px 50px; }
+
+/* Top, horizontal, bottom */
+.pad-three { padding: 25px 50px 75px; }
+
+/* Top right bottom left */
+.pad-four { padding: 25px 50px 75px 100px; }
+
+/* One side only */
+.pad-top { padding-top: 5px; }</code></pre>
+    <p>The easiest way to remember the four-value shorthand is the word "TRouBLe" — Top, Right, Bottom, Left. Get that order right and the rest of CSS's box-property shorthands fall into place.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Padding is inside the border and carries the background.</li>
+      <li>Shorthand order: top, right, bottom, left (TRouBLe).</li>
+      <li>Padding never collapses; negative values are not allowed.</li>
+      <li>Longhand properties adjust one side at a time.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>What is the difference between <code>padding: 10px 20px</code> and <code>padding: 10px 20px 10px 20px</code>?</li>
+      <li>Why does a background colour extend under the padding but not the margin?</li>
+      <li>Write the shorthand for padding 5px top, 10px right, 5px bottom, 10px left.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Margins</button>
+    <button class="nav-button" data-nav="next">Border →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 10
+     ============================================================ -->
+<section id="ch-border" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 10</p>
+    <h2>Border</h2>
+    <p class="chapter-tagline">Lines, curves, images, and the shorthands that build them.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>border</code> property draws a line around the element. The most common shorthand — <code>border: 1px solid #000;</code> — sets width, style, and colour together. Styles include <code>solid</code>, <code>dashed</code>, <code>dotted</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>, <code>none</code>, and <code>hidden</code>.</p>
+    <p><code>border-radius</code> rounds corners. One value rounds all four equally; two values give horizontal and vertical radii; eight values fine-tune each corner. Setting <code>border-radius: 50%</code> on a square produces a circle.</p>
+    <p>Borders can also be built from images. <code>border-image</code> slices a source image into nine regions and stretches the edges to fit. For multiple borders, layer an <code>outline</code>, a <code>box-shadow</code>, or a pseudo-element behind the border.</p>
+    <pre class="code-example"><code>/* Basic border */
+div {
+  border: 1px solid #000;
+}
+
+/* Rounded corners */
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+/* Multi-coloured border with an image */
+.fancy {
+  border-image: linear-gradient(
+    to right,
+    red 20%, green 20%, green 40%,
+    blue 40%, blue 60%
+  ) 1;
+}</code></pre>
+    <p>For tables, <code>border-collapse: collapse</code> merges adjacent cell borders into a single line. The alternative — <code>separate</code> — keeps them apart and allows <code>border-spacing</code> to control the gap between cells.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>border</code> shorthand sets width, style, and colour together.</li>
+      <li><code>border-radius: 50%</code> turns a square into a circle.</li>
+      <li><code>border-image</code> slices an image into nine regions.</li>
+      <li><code>border-collapse</code> merges adjacent table borders.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Turn a 100×100 div into a circle.</li>
+      <li>What does <code>border-style: dashed double;</code> do?</li>
+      <li>When would <code>border-collapse: collapse</code> matter?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Padding</button>
+    <button class="nav-button" data-nav="next">Outlines →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 11
+     ============================================================ -->
+<section id="ch-outlines" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 11</p>
+    <h2>Outlines</h2>
+    <p class="chapter-tagline">A line outside the border that takes up no space.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>An outline is a line drawn around an element, outside its border. The crucial difference from a border is that outlines do not take up space in the box model — adding one does not shift the element or its neighbours. That makes outlines ideal for focus rings and debugging without disturbing layout.</p>
+    <p>Outlines accept the same styles as borders: <code>solid</code>, <code>dashed</code>, <code>dotted</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>, <code>none</code>, and <code>hidden</code>. Unlike borders, outlines cannot have rounded corners, and in some browsers they may be non-rectangular if the element contains text at different font sizes.</p>
+    <pre class="code-example"><code>/* Outline shorthand */
+button:focus {
+  outline: 2px solid #2a7f7a;
+}
+
+/* Different styles */
+.p1 { outline-style: dotted; }
+.p2 { outline-style: dashed; }
+.p3 { outline-style: solid; }
+.p4 { outline-style: double; }</code></pre>
+    <p>Browsers give focusable elements a default outline. Removing it with <code>outline: none</code> without providing an alternative hurts keyboard accessibility — always replace it with something visible.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Outlines are drawn outside the border and take up no space.</li>
+      <li>They accept the same styles as borders but cannot be rounded.</li>
+      <li>Use them for focus rings and layout debugging.</li>
+      <li>Never remove a focus outline without providing a replacement.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Why does adding an outline not push neighbouring elements?</li>
+      <li>Replace the default focus outline on a button with a teal solid ring.</li>
+      <li>What is one reason outlines cannot replace borders everywhere?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Border</button>
+    <button class="nav-button" data-nav="next">Overflow →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 12
+     ============================================================ -->
+<section id="ch-overflow" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 12</p>
+    <h2>Overflow</h2>
+    <p class="chapter-tagline">What to do when content is bigger than its box.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>overflow</code> property decides what happens when content spills past its container. <code>visible</code> (the default) lets it spill; <code>hidden</code> clips it; <code>scroll</code> adds scrollbars; <code>auto</code> adds scrollbars only when needed. <code>overflow-x</code> and <code>overflow-y</code> control the axes separately.</p>
+    <p><code>overflow-wrap: break-word</code> tells the browser it may break a long word onto multiple lines to keep it inside its container — invaluable for user-generated content and URL-like strings. Without it, a single long word can break a narrow layout.</p>
+    <p>Setting <code>overflow</code> to anything other than <code>visible</code> creates a <strong>block formatting context</strong>. That is why <code>overflow: hidden</code> on a parent can force it to contain its floated children — a fact that underpins several classic layout hacks.</p>
+    <pre class="code-example"><code>/* Scroll always */
+.scroll {
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+}
+
+/* Auto — scrollbars only when needed */
+.auto {
+  overflow: auto;
+}
+
+/* Break long words */
+.wrap {
+  overflow-wrap: break-word;
+}
+
+/* Contain floats */
+.parent {
+  overflow: hidden;
+}</code></pre>
+    <p>Use <code>overflow: hidden</code> deliberately, not as a fix-all. It clips content, including shadows and outlines, which sometimes causes unexpected visual bugs.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>overflow</code> controls what happens when content overflows.</li>
+      <li><code>overflow-wrap: break-word</code> breaks long words.</li>
+      <li>Any non-visible overflow creates a block formatting context.</li>
+      <li>Axis-specific properties are <code>overflow-x</code> and <code>overflow-y</code>.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>What is the difference between <code>overflow: auto</code> and <code>overflow: scroll</code>?</li>
+      <li>Why does <code>overflow: hidden</code> on a parent contain floats?</li>
+      <li>Which property breaks a long word inside a narrow column?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Outlines</button>
+    <button class="nav-button" data-nav="next">Media Queries →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 13
+     ============================================================ -->
+<section id="ch-media-queries" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 13</p>
+    <h2>Media Queries</h2>
+    <p class="chapter-tagline">Different styles for different screens — the heart of responsive design.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>A media query applies CSS rules only when a condition is met. The condition can describe the media type (<code>screen</code>, <code>print</code>, <code>all</code>) and one or more features: width, height, orientation, resolution, colour capabilities, and more.</p>
+    <p>The basic form is <code>@media screen and (max-width: 600px) { … }</code>. The <code>not</code> and <code>only</code> modifiers extend the syntax. Media queries are dynamic: when the viewport changes, the styles switch on and off in real time.</p>
+    <p>Common breakpoints cluster around phone (under 480px), tablet (480–1023px), and desktop (1024px and up). Retina displays can be targeted with <code>-webkit-min-device-pixel-ratio: 2</code> or <code>min-resolution: 192dpi</code>.</p>
+    <pre class="code-example"><code>/* Phone styles */
+@media only screen and (max-width: 480px) {
+  .title { font-size: 80%; }
+}
+
+/* Tablet styles */
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  .title { font-size: 90%; }
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .title { font-size: 120%; }
+}
+
+/* Print styles */
+@media print {
+  .no-print { display: none; }
+}</code></pre>
+    <p>Always pair <code>width</code>-based queries with the viewport meta tag — <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</code> — or mobile browsers will render at a virtual width that defeats the query.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Media queries apply CSS conditionally on screen features.</li>
+      <li><code>min-width</code> and <code>max-width</code> define breakpoints; <code>not</code> and <code>only</code> refine them.</li>
+      <li>Retina screens are detected with device-pixel-ratio or resolution queries.</li>
+      <li>The viewport meta tag is required for <code>width</code>-based queries on mobile.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Write a media query that hides an element when the screen is under 700px wide.</li>
+      <li>What is the difference between <code>max-width</code> and <code>max-device-width</code>?</li>
+      <li>Why is the viewport meta tag necessary?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Overflow</button>
+    <button class="nav-button" data-nav="next">Floats →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 14
+     ============================================================ -->
+<section id="ch-floats" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 14</p>
+    <h2>Floats</h2>
+    <p class="chapter-tagline">The classic way to wrap text around an image — and the layout it accidentally enabled.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p><code>float: left</code> and <code>float: right</code> push an element to one side of its container, allowing other content to flow around it. The canonical example is a magazine-style image with text wrapping around it.</p>
+    <p>Floats were once used to build entire column layouts, but the property was never designed for that. Floated elements are removed from normal flow, which is why a parent with only floated children collapses to zero height. The <code>clear</code> property (<code>clear: both</code>) prevents an element from sitting beside a float.</p>
+    <p>To contain floats, use a <strong>clearfix</strong> — a pseudo-element that clears the float inside the parent — or set <code>overflow: hidden</code> on the parent, which creates a block formatting context.</p>
+    <pre class="code-example"><code>/* Wrap text around an image */
+img {
+  float: left;
+  margin-right: 1rem;
+}
+
+/* Clearfix */
+.cf::before,
+.cf::after {
+  content: " ";
+  display: table;
+}
+.cf::after {
+  clear: both;
+}
+
+/* Two-column layout with floats */
+.sidebar { width: 150px; float: left; }
+.content { width: 450px; float: right; }</code></pre>
+    <p>Modern layouts use Flexbox and Grid instead of floats. But floats still shine for their original job: letting text flow around images and pull-quotes.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Floats push an element to one side and let content wrap around it.</li>
+      <li>Floated elements are removed from normal flow; parents collapse without a clearfix.</li>
+      <li><code>clear</code> prevents an element from sitting beside a float.</li>
+      <li>Use Flexbox or Grid for page layout; keep floats for text wrapping.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Float an image left and wrap text around it.</li>
+      <li>Why does a parent with only floated children collapse?</li>
+      <li>What does a clearfix do, and why is it necessary?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Media Queries</button>
+    <button class="nav-button" data-nav="next">Typography →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 15
+     ============================================================ -->
+<section id="ch-typography" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 15</p>
+    <h2>Typography</h2>
+    <p class="chapter-tagline">Fonts, sizes, spacing, shadows — the properties that make text feel right.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>font</code> shorthand bundles style, variant, weight, size/line-height, and family into one declaration: <code>font: bold 20px Arial, sans-serif;</code>. Only <code>font-size</code> and <code>font-family</code> are required — if either is missing, the shorthand is ignored.</p>
+    <p>Font sizes accept any length unit. <code>text-align</code> sets horizontal alignment. <code>line-height</code> sets vertical rhythm. <code>letter-spacing</code> (tracking) and <code>word-spacing</code> adjust the space between letters and words. <code>text-transform</code> changes case. <code>text-decoration</code> adds or removes underlines, overlines, and line-throughs.</p>
+    <p><strong>Font stacks</strong> list fallbacks in order: <code>font-family: 'Segoe UI', Tahoma, sans-serif;</code> tries each face until one is available. <code>text-shadow</code> adds one or more shadows — <code>text-shadow: 2px 2px 10px #0000FF;</code> — with blur and colour controls.</p>
+    <pre class="code-example"><code>/* Font shorthand */
+h1 {
+  font: bold 20px Arial, sans-serif;
+}
+
+/* Font stack */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Text shadow */
+h1 {
+  text-shadow: 2px 2px 10px #0000FF;
+}
+
+/* Text overflow with ellipsis */
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}</code></pre>
+    <p>Typography is where CSS meets design. Learn the properties, then practise restraint: a page with two fonts and consistent spacing almost always reads better than one with five.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>font</code> shorthand requires <code>font-size</code> and <code>font-family</code>.</li>
+      <li>Font stacks list fallback families in order.</li>
+      <li><code>text-shadow</code> takes horizontal, vertical, blur, and colour.</li>
+      <li><code>text-overflow: ellipsis</code> truncates overflowing text.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Write a font shorthand that is bold, 18px, and uses a sans-serif stack.</li>
+      <li>What does <code>text-shadow: 0 3px red, 0 5px blue;</code> produce?</li>
+      <li>Explain the difference between <code>letter-spacing</code> and <code>word-spacing</code>.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Floats</button>
+    <button class="nav-button" data-nav="next">Flexible Box Layout (Flexbox) →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 16
+     ============================================================ -->
+<section id="ch-flexible-box-layout" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Two · Spacing &amp; Typography · Chapter 16</p>
+    <h2>Flexible Box Layout (Flexbox)</h2>
+    <p class="chapter-tagline">A one-dimensional layout model that expands, shrinks, and aligns.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Flexbox lays out items in one direction — a row or a column — and distributes the space among them. Apply <code>display: flex</code> to a container and its immediate children become flex items. <code>flex-direction</code> chooses the axis; <code>justify-content</code> aligns along that axis; <code>align-items</code> aligns across it.</p>
+    <p><code>justify-content: center</code> and <code>align-items: center</code> together centre both axes in two declarations. <code>flex-wrap: wrap</code> lets items wrap to a new line when the row runs out of space. <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> (usually abbreviated as <code>flex</code>) control how items grow and shrink.</p>
+    <p>Flexbox shines for navigation bars, sticky footers, card grids, and the "Holy Grail" layout (header, footer, and three-column centre). It is also the modern answer to vertical centring.</p>
+    <pre class="code-example"><code>/* Centre everything */
+.aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.content {
+  flex: 1 0 auto;
+}
+.header, .footer {
+  flex: none;
+}
+
+/* Buttons aligned to card bottoms */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card p:last-child {
+  margin-top: auto;
+  text-align: center;
+}</code></pre>
+    <p>Flexbox is supported by every modern browser, with vendor prefixes needed only for very old versions of Safari and IE10.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>display: flex</code> turns a container into a flex layout.</li>
+      <li><code>justify-content</code> aligns along the main axis; <code>align-items</code> across it.</li>
+      <li><code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code> control sizing.</li>
+      <li>Flexbox replaces floats for most one-dimensional layouts.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Centre a single element both horizontally and vertically with Flexbox.</li>
+      <li>What does <code>flex: 1 0 auto</code> mean?</li>
+      <li>Why is <code>margin-top: auto</code> useful inside a flex column?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Typography</button>
+    <button class="nav-button" data-nav="next">Part Three →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     PART THREE DIVIDER
+     ============================================================ -->
+<section id="part-three" class="book-page cover-page part-page part-three">
+  <div class="cover-content">
+    <p class="part-number">Part Three</p>
+    <h1>Visual Styling &amp; Animation</h1>
+    <p class="part-desc">Cascading, colours, transforms, transitions, and the properties that make interfaces feel alive.</p>
+  </div>
+  <div class="book-nav">
+    <button class="nav-button" data-nav="next">Begin Chapter 17 →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 17
+     ============================================================ -->
+<section id="ch-cascading-and-specificity" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 17</p>
+    <h2>Cascading and Specificity</h2>
+    <p class="chapter-tagline">When rules collide, which one wins?</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>When several rules set the same property on the same element, the browser resolves the conflict with two mechanisms: <strong>specificity</strong> and the <strong>cascade</strong>. Specificity scores each selector on three axes — IDs (A), classes/attributes/pseudo-classes (B), and types/pseudo-elements (C). An ID beats any number of classes; a class beats any number of types.</p>
+    <p>If specificity ties, the cascade takes over: later rules win. Inline styles beat every selector, and <code>!important</code> beats inline styles. The <code>!important</code> flag is powerful and dangerous — use it sparingly and never as a substitute for structure.</p>
+    <p>Stylesheets load in order: user agent styles, then user styles, then author styles, then inline styles. Within the author styles, later declarations override earlier ones of equal specificity.</p>
+    <pre class="code-example"><code>/* Specificity: 0,1,0 */
+.bar { color: red; }
+
+/* Specificity: 0,0,1 */
+div { color: blue; }
+
+/* Specificity: 0,2,0 — wins */
+.bar.bar { color: green; }
+
+/* Inline style beats everything */
+&lt;div style="color: purple;"&gt;…&lt;/div&gt;
+
+/* !important overrides inline */
+p { color: orange !important; }</code></pre>
+    <p>The best stylesheet keeps specificity low and flat. If you find yourself stacking classes or reaching for <code>!important</code>, restructure the selectors instead.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Specificity is scored as A (IDs), B (classes/attributes), C (types).</li>
+      <li>An ID beats any number of classes; a class beats any number of types.</li>
+      <li>Later rules win when specificity ties.</li>
+      <li>Inline styles beat selectors; <code>!important</code> beats inline styles.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Rank the specificity of <code>#a</code>, <code>.a.b</code>, and <code>div p</code>.</li>
+      <li>Why is <code>!important</code> discouraged for routine styling?</li>
+      <li>What wins between two rules with identical specificity?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Part Three</button>
+    <button class="nav-button" data-nav="next">Colors →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 18
+     ============================================================ -->
+<section id="ch-colors" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 18</p>
+    <h2>Colors</h2>
+    <p class="chapter-tagline">Keywords, hex, rgb, hsl — and the currentColor that ties them together.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS accepts colours in four main notations. <strong>Keywords</strong> — <code>red</code>, <code>teal</code>, <code>rebeccapurple</code> — are readable and memorable. <strong>Hex codes</strong> — <code>#ff0000</code>, or the short form <code>#f00</code> — encode red, green, and blue as pairs of hexadecimal digits. <strong><code>rgb()</code></strong> and <strong><code>rgba()</code></strong> use decimal numbers 0–255, with an optional alpha between 0 and 1. <strong><code>hsl()</code></strong> and <strong><code>hsla()</code></strong> use hue (0–360°), saturation, and lightness percentages.</p>
+    <p>The keyword <code>currentColor</code> takes the current element's <code>color</code> value and reuses it — perfect for borders and backgrounds that should match the text. The <code>transparent</code> keyword is a fully-transparent black.</p>
+    <pre class="code-example"><code>/* All the same colour */
+p { color: red; }
+p { color: #ff0000; }
+p { color: #f00; }
+p { color: rgb(255, 0, 0); }
+p { color: hsl(0, 100%, 50%); }
+
+/* Semi-transparent */
+p { color: rgba(255, 0, 0, 0.5); }
+p { color: hsla(0, 100%, 50%, 0.5); }
+
+/* Match the text colour */
+.card {
+  color: #b00;
+  border: 2px solid currentColor;
+}</code></pre>
+    <p>Use hex for static palettes, <code>hsl()</code> for programmatic colour manipulation, and <code>currentColor</code> to keep related properties in step.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Colours can be keywords, hex, rgb(a), or hsl(a).</li>
+      <li>Hex pairs encode red, green, and blue; <code>#f00</code> is shorthand for <code>#ff0000</code>.</li>
+      <li><code>rgba()</code> and <code>hsla()</code> add an alpha channel.</li>
+      <li><code>currentColor</code> reuses the element's computed <code>color</code>.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Write the same colour four ways.</li>
+      <li>What does <code>hsla(120, 100%, 50%, 0.3)</code> produce?</li>
+      <li>When is <code>currentColor</code> more useful than a literal colour?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Cascading and Specificity</button>
+    <button class="nav-button" data-nav="next">Opacity →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 19
+     ============================================================ -->
+<section id="ch-opacity" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 19</p>
+    <h2>Opacity</h2>
+    <p class="chapter-tagline">Making an element see-through — without surprising its children.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>opacity</code> property accepts a number between 0 and 1. <code>1</code> is fully opaque, <code>0</code> is fully transparent, and anything between is a blend. The property affects the element and everything inside it, which is usually what you want for a card or a modal overlay.</p>
+    <p>When only the background should be transparent, use an <code>rgba()</code> or <code>hsla()</code> background colour instead. Setting <code>opacity</code> on the parent makes its children transparent too; setting an alpha background colour leaves the content solid.</p>
+    <pre class="code-example"><code>/* Whole element, children included */
+.overlay {
+  opacity: 0.6;
+}
+
+/* Background only, content stays solid */
+.panel {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Legacy IE fallback */
+.legacy {
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}</code></pre>
+    <p>Old versions of Internet Explorer need the <code>filter: alpha(opacity=…)</code> fallback, where the value is 0–100 rather than 0–1.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>opacity</code> takes a number from 0 (transparent) to 1 (opaque).</li>
+      <li>It affects the element and all its children.</li>
+      <li>For a transparent background only, use <code>rgba()</code> or <code>hsla()</code>.</li>
+      <li>Legacy IE uses <code>filter: alpha(opacity=…)</code>.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Make a button's background 50% transparent without dimming its label.</li>
+      <li>What is the difference between <code>opacity: 0.5</code> on a parent and <code>background: rgba(0,0,0,0.5)</code>?</li>
+      <li>Convert <code>opacity: 0.4</code> to the IE <code>filter</code> syntax.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Colors</button>
+    <button class="nav-button" data-nav="next">Length Units →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 20
+     ============================================================ -->
+<section id="ch-length-units" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 20</p>
+    <h2>Length Units</h2>
+    <p class="chapter-tagline">Pixels, ems, rems, viewport units — choosing the right ruler.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS lengths come in two families: <strong>absolute</strong> and <strong>relative</strong>. Absolute units — <code>px</code>, <code>cm</code>, <code>mm</code>, <code>in</code>, <code>pt</code>, <code>pc</code> — map to physical or pseudo-physical sizes. Relative units — <code>em</code>, <code>rem</code>, <code>%</code>, <code>vh</code>, <code>vw</code>, <code>vmin</code>, <code>vmax</code>, <code>ch</code>, <code>ex</code> — depend on the element or the viewport.</p>
+    <p><code>em</code> is relative to the element's own font-size (or inherited). <code>rem</code> is relative to the root <code>&lt;html&gt;</code> font-size, which makes it excellent for global scaling. <code>vh</code> and <code>vw</code> are percentages of the viewport's height and width; <code>vmin</code> and <code>vmax</code> choose the smaller or larger dimension.</p>
+    <pre class="code-example"><code>html { font-size: 16px; }
+
+h1 { font-size: 2rem; }   /* 32px */
+p  { font-size: 1rem; }   /* 16px */
+li { font-size: 1.5em; }  /* 24px, compounding */
+
+.hero {
+  width: 20vw;
+  height: 20vh;
+}</code></pre>
+    <p>The <code>rem</code> unit is the modern default for typography because it does not compound. <code>em</code> is still useful inside a component whose size should scale with its own font-size.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Absolute units include <code>px</code>, <code>cm</code>, <code>mm</code>, <code>in</code>, <code>pt</code>, <code>pc</code>.</li>
+      <li>Relative units include <code>em</code>, <code>rem</code>, <code>%</code>, <code>vh</code>, <code>vw</code>, <code>vmin</code>, <code>vmax</code>.</li>
+      <li><code>em</code> compounds; <code>rem</code> does not.</li>
+      <li><code>vh</code>/<code>vw</code> are percentages of the viewport.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>With a 16px root, what is <code>1.5rem</code> in pixels?</li>
+      <li>Why does a nested <code>em</code> often surprise developers?</li>
+      <li>When would you use <code>vmin</code> rather than <code>vh</code>?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Opacity</button>
+    <button class="nav-button" data-nav="next">Pseudo-Elements →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 21
+     ============================================================ -->
+<section id="ch-pseudo-elements" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 21</p>
+    <h2>Pseudo-Elements</h2>
+    <p class="chapter-tagline">Styling parts of an element — and adding content that is not in the markup.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Pseudo-elements select sub-parts of an element. <code>::first-letter</code> and <code>::first-line</code> style the first letter or line of a block. <code>::before</code> and <code>::after</code> insert generated content before or after the element's content — but only if you give them a <code>content</code> value.</p>
+    <p>Because they are generated by CSS, pseudo-elements cannot be selected or copied in the usual way, and they do not appear in the DOM. They are useful for decorative flourishes, custom bullets, and clearfixes.</p>
+    <pre class="code-example"><code>/* Drop cap */
+p::first-letter {
+  font-size: 2.5em;
+  color: #a43f2a;
+  float: left;
+}
+
+/* Decorative label */
+.badge::after {
+  content: " ●";
+  color: red;
+}
+
+/* Custom list bullets */
+ul { list-style-type: none; }
+li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  background: linear-gradient(red, blue);
+}</code></pre>
+    <p>The two-colon syntax (<code>::before</code>) is modern; the single-colon form (<code>:before</code>) is the old CSS2 syntax and still works. Use the two-colon form for clarity.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Pseudo-elements style parts of an element.</li>
+      <li><code>::before</code> and <code>::after</code> require a <code>content</code> property.</li>
+      <li>Pseudo-elements cannot be selected or edited by the user.</li>
+      <li>Two-colon syntax is preferred for pseudo-elements.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Add a decorative "★" before every heading.</li>
+      <li>Why does a <code>::before</code> rule with no <code>content</code> do nothing?</li>
+      <li>Give a paragraph a coloured drop cap.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Length Units</button>
+    <button class="nav-button" data-nav="next">Positioning →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 22
+     ============================================================ -->
+<section id="ch-positioning" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 22</p>
+    <h2>Positioning</h2>
+    <p class="chapter-tagline">Static, relative, absolute, fixed — and the z-index that stacks them.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>position</code> property decides how an element is placed. <code>static</code> is the default: the element flows normally and <code>top</code>/<code>right</code>/<code>bottom</code>/<code>left</code> do nothing. <code>relative</code> shifts the element from its normal position. <code>absolute</code> removes it from flow and positions it against its nearest positioned ancestor. <code>fixed</code> positions it against the viewport.</p>
+    <p>The <code>z-index</code> property controls stacking order among positioned elements. Higher values appear in front; the default is <code>auto</code>. <code>z-index</code> only applies to positioned elements (relative, absolute, fixed) or flex/grid items.</p>
+    <pre class="code-example"><code>/* Stacked boxes */
+div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+#div1 { z-index: 1; left: 0; top: 0; background: blue; }
+#div2 { z-index: 3; left: 100px; top: 100px; background: green; }
+#div3 { z-index: 2; left: 50px; top: 150px; background: red; }
+
+/* Sticky header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}</code></pre>
+    <p>Relative positioning is often used on a parent so that absolutely-positioned children can be placed within it. Without a positioned ancestor, an absolute element falls back to the viewport.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>static</code> is the default; offsets have no effect.</li>
+      <li><code>relative</code> shifts from normal position; <code>absolute</code> positions against the nearest positioned ancestor.</li>
+      <li><code>fixed</code> positions against the viewport.</li>
+      <li><code>z-index</code> controls stacking order and only applies to positioned elements.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Place a small badge in the top-right corner of a card using absolute positioning.</li>
+      <li>Why does an absolute child sometimes escape its parent?</li>
+      <li>What happens if you set <code>z-index</code> on a static element?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Pseudo-Elements</button>
+    <button class="nav-button" data-nav="next">Layout Control →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 23
+     ============================================================ -->
+<section id="ch-layout-control" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 23</p>
+    <h2>Layout Control</h2>
+    <p class="chapter-tagline">The <code>display</code> property — the switch that decides how an element behaves.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>display</code> property is the most important property in CSS layout. Every element's behaviour — block, inline, inline-block, flex, grid, table — is set by it. Changing <code>display</code> changes how the element participates in flow.</p>
+    <p><code>block</code> elements take the full width of their parent and start on a new line. <code>inline</code> elements sit in the flow of text and ignore <code>width</code>/<code>height</code>. <code>inline-block</code> blends the two — it sits inline like text but accepts width and height. <code>none</code> removes the element from the page entirely.</p>
+    <pre class="code-example"><code>/* Block-level */
+div { display: block; }
+
+/* Inline */
+span { display: inline; }
+
+/* Inline-block — respects width/height */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+/* Hidden */
+.hidden { display: none; }
+
+/* Table behaviour on a div */
+.table-div { display: table; }
+.table-row { display: table-row; }
+.table-cell { display: table-cell; }</code></pre>
+    <p>Unlike <code>visibility: hidden</code>, <code>display: none</code> removes the element from layout entirely — it takes up no space. That distinction matters for menus, modals, and keyboard focus.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>display</code> controls how an element behaves in layout.</li>
+      <li><code>block</code>, <code>inline</code>, and <code>inline-block</code> cover the classic modes.</li>
+      <li><code>display: none</code> removes the element from layout entirely.</li>
+      <li><code>display: table</code> gives table behaviour to divs.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Make a div sit inline with text while still respecting width and height.</li>
+      <li>What is the difference between <code>display: none</code> and <code>visibility: hidden</code>?</li>
+      <li>Recreate a table row using divs and table display properties.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Positioning</button>
+    <button class="nav-button" data-nav="next">Grid →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 24
+     ============================================================ -->
+<section id="ch-grid" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 24</p>
+    <h2>Grid</h2>
+    <p class="chapter-tagline">Two-dimensional layout, at last.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS Grid lays out content in rows and columns simultaneously. Apply <code>display: grid</code> to a parent and its immediate children become grid items. <code>grid-template-columns</code> and <code>grid-template-rows</code> define the tracks.</p>
+    <p>Items are placed by <code>grid-column</code> and <code>grid-row</code> — either by line number, or by named areas. <code>grid-gap</code> creates gutters between cells. Grid can be nested inside Flexbox and vice versa; they are complementary, not competing.</p>
+    <pre class="code-example"><code>.container {
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  grid-template-rows: 50px 50px;
+  gap: 10px;
+}
+
+.item1 { grid-column: 1; grid-row: 1; }
+.item2 { grid-column: 2; grid-row: 1; }
+.item3 { grid-column: 1; grid-row: 2; }
+.item4 { grid-column: 2; grid-row: 2; }</code></pre>
+    <p>Grid is ideal for page-level layout with multiple rows and columns. Flexbox remains the better choice for one-dimensional layouts — a single row of buttons, a vertical stack of paragraphs.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>display: grid</code> creates a two-dimensional layout.</li>
+      <li><code>grid-template-columns</code> and <code>grid-template-rows</code> define tracks.</li>
+      <li>Items are placed with <code>grid-column</code> and <code>grid-row</code>.</li>
+      <li>Grid and Flexbox are complementary.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Create a 3×2 grid with 10px gaps.</li>
+      <li>Place item 2 in the top-right cell.</li>
+      <li>When would you use Grid instead of Flexbox?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Layout Control</button>
+    <button class="nav-button" data-nav="next">Tables →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 25
+     ============================================================ -->
+<section id="ch-tables" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 25</p>
+    <h2>Tables</h2>
+    <p class="chapter-tagline">Borders, spacing, and the algorithm that sizes cells.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS provides several properties specifically for HTML tables. <code>table-layout</code> chooses between <code>auto</code> (the default, where content determines column widths) and <code>fixed</code> (where the table's declared width wins, and cells clip their content).</p>
+    <p><code>border-collapse</code> merges adjacent cell borders into one or keeps them separate. When separate, <code>border-spacing</code> controls the gap. <code>empty-cells</code> decides whether cells with no content show their borders. <code>caption-side</code> moves the table caption above or below the table.</p>
+    <pre class="code-example"><code>table {
+  table-layout: fixed;
+  width: 150px;
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid #999;
+  padding: 4px;
+}
+
+caption {
+  caption-side: bottom;
+  font-style: italic;
+}</code></pre>
+    <p>Tables have not changed much since CSS2, and for good reason: the HTML table element is still the right tool for tabular data. Use CSS Grid for layout and reserve tables for actual tables.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>table-layout: fixed</code> uses the declared width and clips overflow.</li>
+      <li><code>border-collapse</code> merges adjacent borders.</li>
+      <li><code>border-spacing</code> only works when borders are separate.</li>
+      <li><code>caption-side</code> moves the caption above or below the table.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Collapse the borders of a table and give each cell a 1px grey border.</li>
+      <li>What does <code>table-layout: fixed</code> do to overflowing cells?</li>
+      <li>When is <code>empty-cells: hide</code> useful?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Grid</button>
+    <button class="nav-button" data-nav="next">Transitions →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 26
+     ============================================================ -->
+<section id="ch-transitions" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 26</p>
+    <h2>Transitions</h2>
+    <p class="chapter-tagline">Smooth changes between two states.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>A <strong>transition</strong> animates a property change between two states — hover to non-hover, small to large, red to green. The shorthand <code>transition: background-color 1s;</code> sets the property, duration, timing function, and delay in one declaration.</p>
+    <p>The <code>transition-timing-function</code> controls the easing curve. <code>ease</code>, <code>linear</code>, <code>ease-in</code>, <code>ease-out</code>, and <code>ease-in-out</code> cover most needs; <code>cubic-bezier()</code> gives complete control. <code>steps()</code> creates discrete jumps rather than smooth changes.</p>
+    <pre class="code-example"><code>/* One property */
+div {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  transition: background-color 1s;
+}
+div:hover {
+  background-color: green;
+}
+
+/* Multiple properties */
+.box {
+  transition: height 1s, width 500ms;
+}</code></pre>
+    <p>Not every property is transitionable — <code>display</code> and <code>visibility</code> famously are not, and neither are keyword values like <code>auto</code>. The unit must remain consistent for the transition to interpolate.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Transitions animate property changes between two states.</li>
+      <li>The shorthand sets property, duration, timing, and delay.</li>
+      <li><code>cubic-bezier()</code> gives fine-grained easing.</li>
+      <li>Not every property is transitionable.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Fade a button's background from blue to red on hover over 300ms.</li>
+      <li>What does <code>transition: all 1s ease-in-out</code> do?</li>
+      <li>Why can't <code>display: none</code> to <code>display: block</code> be transitioned?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Tables</button>
+    <button class="nav-button" data-nav="next">Animations →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 27
+     ============================================================ -->
+<section id="ch-animations" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 27</p>
+    <h2>Animations</h2>
+    <p class="chapter-tagline">Keyframes, timing functions, and the loops that run on their own.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Where transitions animate between two states, <strong>@keyframes</strong> animate across any number of states. Define the animation with named keyframe stops (0%, 50%, 100%) and attach it with the <code>animation</code> shorthand.</p>
+    <p>The shorthand combines <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code>, <code>animation-delay</code>, <code>animation-iteration-count</code>, <code>animation-direction</code>, <code>animation-fill-mode</code>, and <code>animation-play-state</code>. The <code>infinite</code> keyword repeats forever.</p>
+    <pre class="code-example"><code>@keyframes rainbow-background {
+  0%   { background-color: #ff0000; }
+  16.6%{ background-color: #ffff00; }
+  33.3%{ background-color: #00ff00; }
+  50%  { background-color: #00ffff; }
+  66.6%{ background-color: #0000ff; }
+  83.3%{ background-color: #ff00ff; }
+  100% { background-color: #ff0000; }
+}
+
+.RainbowBackground {
+  animation: rainbow-background 5s infinite;
+}</code></pre>
+    <p>For performance, animate <code>transform</code> and <code>opacity</code> where you can — they are GPU-accelerated. <code>will-change: transform, opacity</code> hints the browser to prepare paint layers in advance.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>@keyframes</code> defines multi-stage animations.</li>
+      <li>The <code>animation</code> shorthand sets name, duration, timing, delay, count, direction, and more.</li>
+      <li><code>infinite</code> repeats forever.</li>
+      <li>Animate <code>transform</code> and <code>opacity</code> for GPU acceleration.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Make a square pulse its opacity from 1 to 0.5 and back, forever.</li>
+      <li>What does <code>animation-fill-mode: forwards</code> do?</li>
+      <li>Why is <code>will-change</code> useful, and why should it be used sparingly?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Transitions</button>
+    <button class="nav-button" data-nav="next">2D Transforms →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 28
+     ============================================================ -->
+<section id="ch-2d-transforms" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 28</p>
+    <h2>2D Transforms</h2>
+    <p class="chapter-tagline">Rotate, scale, skew, and translate — the geometry of CSS.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>transform</code> property applies geometric operations to an element. <code>rotate()</code> turns it; <code>scale()</code> resizes it; <code>skew()</code> slants it; <code>translate()</code> moves it. <code>matrix()</code> gives the full affine transformation in one function.</p>
+    <p>Transforms do not affect layout — neighbouring elements see the element at its original position. That makes transform animations smooth. The origin of the transform can be changed with <code>transform-origin</code>; the default is the element's centre.</p>
+    <pre class="code-example"><code>.rotate  { transform: rotate(45deg); }
+.scale   { transform: scale(0.5, 1.3); }
+.skew    { transform: skew(20deg, -30deg); }
+.translate { transform: translate(200px, 50%); }
+
+/* Chained transforms apply in order */
+.chained {
+  transform: rotate(15deg) translateX(200px);
+}
+
+/* Change the origin */
+.origin {
+  transform-origin: 0 0;
+  transform: rotate(30deg);
+}</code></pre>
+    <p>Transforms can be chained, and the order matters: <code>rotate() translate()</code> means rotate first, then translate along the rotated axis.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Transforms apply rotate, scale, skew, and translate.</li>
+      <li>Transforms do not affect layout.</li>
+      <li><code>transform-origin</code> changes the pivot point.</li>
+      <li>Chained transforms apply in declared order.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Rotate a square by 45° around its top-left corner.</li>
+      <li>What does <code>scale(0.5, 1.3)</code> do?</li>
+      <li>Why does transform order matter?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Animations</button>
+    <button class="nav-button" data-nav="next">3D Transforms →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 29
+     ============================================================ -->
+<section id="ch-3d-transforms" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 29</p>
+    <h2>3D Transforms</h2>
+    <p class="chapter-tagline">Rotate in space, build cubes, hide backfaces.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS supports 3D transforms through <code>rotateX()</code>, <code>rotateY()</code>, <code>rotateZ()</code>, and <code>translateZ()</code>. With <code>perspective</code> on the parent, distant elements appear smaller, giving a sense of depth.</p>
+    <p><code>backface-visibility</code> controls whether an element is visible when it faces away from the viewer. It is essential for card-flip animations, where two faces swap in the middle of a 180° rotation. Set <code>backface-visibility: hidden</code> on the back face to keep it out of sight until flipped.</p>
+    <pre class="code-example"><code>.flip {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.scene {
+  perspective: 1000px;
+}
+
+/* A simple 3D cube face */
+.cubeFace {
+  transform-origin: 50% 50%;
+  transform: rotateX(90deg);
+  backface-visibility: hidden;
+}</code></pre>
+    <p>3D transforms are GPU-accelerated and generally smooth. Combine them with transitions for flip-card UI and with <code>animation</code> for continuous rotations.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>3D transforms use <code>rotateX</code>, <code>rotateY</code>, <code>rotateZ</code>, and <code>translateZ</code>.</li>
+      <li><code>perspective</code> on the parent adds depth.</li>
+      <li><code>backface-visibility: hidden</code> hides an element when it faces away.</li>
+      <li>3D transforms are ideal for flip cards and cubes.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Flip a card 180° on hover with a smooth transition.</li>
+      <li>What does <code>perspective: 1000px</code> add to a 3D scene?</li>
+      <li>Why is <code>backface-visibility</code> essential for a flip effect?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← 2D Transforms</button>
+    <button class="nav-button" data-nav="next">Filter Property →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 30
+     ============================================================ -->
+<section id="ch-filter-property" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 30</p>
+    <h2>Filter Property</h2>
+    <p class="chapter-tagline">Blur, brightness, contrast, and the photographic effects in CSS.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>filter</code> property applies graphical effects to an element. It accepts one or more functions: <code>blur()</code>, <code>brightness()</code>, <code>contrast()</code>, <code>drop-shadow()</code>, <code>grayscale()</code>, <code>hue-rotate()</code>, <code>invert()</code>, <code>opacity()</code>, <code>saturate()</code>, and <code>sepia()</code>. Multiple filters are separated by spaces and applied in order.</p>
+    <p>Filters work on images, videos, and any HTML element. Because they are GPU-accelerated in modern browsers, they are excellent for hover effects, disabled states, and photo galleries.</p>
+    <pre class="code-example"><code>/* Blur a photo */
+img { filter: blur(1px); }
+
+/* Drop shadow */
+.shadow {
+  filter: drop-shadow(10px 10px 1px green);
+}
+
+/* Multiple filters */
+.dramatic {
+  filter: brightness(200%) grayscale(100%) sepia(100%) invert(100%);
+}
+
+/* White becomes black */
+.inverted {
+  background-color: white;
+  filter: invert(100%);
+}</code></pre>
+    <p>Filters are a great reminder that CSS is a visual language. A single declaration can transform an entire photograph — no image editor required.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>filter</code> applies graphical effects to an element.</li>
+      <li>Functions include <code>blur()</code>, <code>brightness()</code>, <code>contrast()</code>, <code>grayscale()</code>, and more.</li>
+      <li>Multiple filters combine, applied in order.</li>
+      <li>Filters are GPU-accelerated and good for interaction effects.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Desaturate an image on hover using <code>grayscale()</code>.</li>
+      <li>What does <code>filter: drop-shadow(5px 5px 2px black)</code> do?</li>
+      <li>Why might <code>filter</code> be cheaper than <code>box-shadow</code> for some effects?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← 3D Transforms</button>
+    <button class="nav-button" data-nav="next">Cursor Styling →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 31
+     ============================================================ -->
+<section id="ch-cursor-styling" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 31</p>
+    <h2>Cursor Styling</h2>
+    <p class="chapter-tagline">Pointers, waits, resize arrows — the mouse speaks through CSS.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The <code>cursor</code> property changes the pointer that appears when the mouse hovers over an element. <code>pointer</code> is the standard for clickable items; <code>default</code> and <code>auto</code> leave the browser's choice; <code>wait</code>, <code>progress</code>, <code>help</code>, and the resize arrows cover the rest.</p>
+    <p><code>pointer-events</code> disables mouse interaction entirely — <code>pointer-events: none</code> makes an element invisible to the mouse, useful for overlays that should not block clicks. <code>caret-color</code> sets the colour of the text insertion caret.</p>
+    <pre class="code-example"><code>a { cursor: pointer; }
+.wait { cursor: wait; }
+.resize { cursor: nwse-resize; }
+
+/* Disable mouse events */
+.overlay {
+  pointer-events: none;
+}
+
+/* Coloured caret */
+input {
+  caret-color: red;
+}</code></pre>
+    <p>Custom cursor images are possible through <code>url()</code>, but they should always include a fallback keyword, since images may fail to load.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>cursor</code> chooses the pointer style.</li>
+      <li><code>pointer</code> is the standard for clickable elements.</li>
+      <li><code>pointer-events: none</code> disables mouse interaction.</li>
+      <li><code>caret-color</code> sets the text-insertion caret colour.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Make a button show a pointer on hover.</li>
+      <li>What does <code>pointer-events: none</code> do to links inside an overlay?</li>
+      <li>Why should a custom cursor always provide a fallback?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Filter Property</button>
+    <button class="nav-button" data-nav="next">box-shadow →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 32
+     ============================================================ -->
+<section id="ch-box-shadow" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Three · Visual Styling &amp; Animation · Chapter 32</p>
+    <h2>box-shadow</h2>
+    <p class="chapter-tagline">Drop shadows, inner shadows, and the comma-separated art of depth.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p><code>box-shadow</code> adds one or more shadows to an element. Its parameters are horizontal offset, vertical offset, blur radius, spread radius, and colour — in that order. Negative offsets push the shadow up and to the left.</p>
+    <p>The <code>inset</code> keyword draws the shadow inside the border, creating a recessed appearance. Multiple shadows are separated by commas: a button can have both a soft outer glow and a hard inner highlight.</p>
+    <pre class="code-example"><code>/* Drop shadow */
+.box {
+  box-shadow: 0 0 10px -1px #444444;
+}
+
+/* Inner shadow */
+.inset {
+  box-shadow: inset 0 0 10px 0 #444444;
+}
+
+/* Four shadows at once */
+.multi {
+  box-shadow:
+    -52px -52px 0 0 #f65314,
+     52px -52px 0 0 #7cbb00,
+    -52px  52px 0 0 #00a1f1,
+     52px  52px 0 0 #ffbb00;
+}</code></pre>
+    <p>Animate box-shadows sparingly; they are not GPU-accelerated the way transforms are. When performance matters, combine a static <code>box-shadow</code> with a <code>transform</code> animation on a pseudo-element instead.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Parameters: offset-x, offset-y, blur, spread, colour.</li>
+      <li><code>inset</code> draws the shadow inside the border.</li>
+      <li>Multiple shadows are separated by commas.</li>
+      <li>Box-shadows are not GPU-accelerated; animate with care.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Give a card a soft drop shadow.</li>
+      <li>Create an inset shadow that looks like a pressed button.</li>
+      <li>Combine a coloured glow with a dark drop shadow on the same element.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Cursor Styling</button>
+    <button class="nav-button" data-nav="next">Part Four →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     PART FOUR DIVIDER
+     ============================================================ -->
+<section id="part-four" class="book-page cover-page part-page part-four">
+  <div class="cover-content">
+    <p class="part-number">Part Four</p>
+    <h1>Advanced Layout &amp; Techniques</h1>
+    <p class="part-desc">Shapes, counters, variables, columns, masks — the tools that separate good CSS from great CSS.</p>
+  </div>
+  <div class="book-nav">
+    <button class="nav-button" data-nav="next">Begin Chapter 33 →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 33
+     ============================================================ -->
+<section id="ch-shapes-for-floats" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 33</p>
+    <h2>Shapes for Floats</h2>
+    <p class="chapter-tagline">Let text wrap around circles, ellipses, and polygons — not just rectangles.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>By default, text wraps around a floated element's rectangular box. <code>shape-outside</code> lets the float area take any shape — a circle, ellipse, polygon, or image alpha channel — so surrounding content flows around the new outline instead.</p>
+    <p><code>shape-margin</code> adds a gap between the shape and the wrapped text. Together with <code>clip-path</code>, it becomes possible to design magazine-style layouts where images and text interlock organically.</p>
+    <pre class="code-example"><code>img {
+  float: left;
+  width: 200px;
+  shape-outside: circle(80px at 50% 50%);
+  shape-margin: 10px;
+}</code></pre>
+    <p>Shapes only affect content that flows around a float. If the element is not floated, <code>shape-outside</code> has no effect.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>shape-outside</code> redefines the float area.</li>
+      <li>Shapes include <code>circle()</code>, <code>ellipse()</code>, <code>polygon()</code>, and images.</li>
+      <li><code>shape-margin</code> adds breathing room around the shape.</li>
+      <li>Shapes require a floated element.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Wrap text around a circular image.</li>
+      <li>What happens if the image is not floated?</li>
+      <li>Add a 15px margin between the shape and the text.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Part Four</button>
+    <button class="nav-button" data-nav="next">List Styles →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 34
+     ============================================================ -->
+<section id="ch-list-styles" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 34</p>
+    <h2>List Styles</h2>
+    <p class="chapter-tagline">Bullets, numbers, and the marker box that styles them.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p><code>list-style-type</code> sets the bullet or number shape — <code>disc</code>, <code>circle</code>, <code>square</code>, <code>decimal</code>, <code>lower-roman</code>, <code>upper-alpha</code>, and more. <code>list-style-image</code> replaces the marker with an image. <code>list-style-position</code> decides whether the marker sits inside or outside the item.</p>
+    <p>To remove bullets entirely, set <code>list-style-type: none</code> and zero out the default margin and padding the browser applies to lists.</p>
+    <pre class="code-example"><code>/* Filled square bullets */
+li { list-style-type: square; }
+
+/* Image bullets */
+li { list-style-image: url(images/bullet.png); }
+
+/* Position */
+li { list-style-position: inside; }
+
+/* Remove entirely */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}</code></pre>
+    <p>The shorthand <code>list-style</code> combines type, position, and image. Remember the order: type, position, image.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>list-style-type</code> sets the marker shape.</li>
+      <li><code>list-style-image</code> replaces the marker with an image.</li>
+      <li><code>list-style-position</code> controls whether the marker is inside or outside.</li>
+      <li>To remove bullets, zero out margin and padding too.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Change the bullets of an unordered list to squares.</li>
+      <li>Write the shorthand for a decimal list with markers inside.</li>
+      <li>Why is setting <code>list-style: none</code> alone sometimes not enough?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Shapes for Floats</button>
+    <button class="nav-button" data-nav="next">Counters →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 35
+     ============================================================ -->
+<section id="ch-counters" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 35</p>
+    <h2>Counters</h2>
+    <p class="chapter-tagline">Automatic numbering that goes as deep as your markup does.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS counters number elements automatically. The three properties are <code>counter-reset</code> (create and set a counter), <code>counter-increment</code> (increment it), and <code>content: counter(name)</code> (print it).</p>
+    <p>Counters can be styled like list markers — <code>counter(item, upper-roman)</code> prints roman numerals — and they can nest. The <code>counters()</code> function (plural) prints every parent level joined by a connector string, producing output like <em>2.1.1</em>.</p>
+    <pre class="code-example"><code>body {
+  counter-reset: item-counter;
+}
+
+.item {
+  counter-increment: item-counter;
+}
+
+.item:before {
+  content: counter(item-counter, upper-roman) ". ";
+}</code></pre>
+    <p>Counters are especially useful for headings, table-of-contents pages, and anything where content order matters but the markup does not.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Counters use <code>counter-reset</code>, <code>counter-increment</code>, and <code>content: counter()</code>.</li>
+      <li>Counters can be styled with the same names as list-style-types.</li>
+      <li><code>counters()</code> prints multi-level numbering joined by a string.</li>
+      <li>Counters work in any element, not just lists.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Number every <code>.item</code> with roman numerals.</li>
+      <li>Build a nested list whose markers read 1., 1.1., 1.1.1.</li>
+      <li>Why is <code>counters()</code> used instead of <code>counter()</code> for nested items?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← List Styles</button>
+    <button class="nav-button" data-nav="next">Functions →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 36
+     ============================================================ -->
+<section id="ch-functions" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 36</p>
+    <h2>Functions</h2>
+    <p class="chapter-tagline">calc(), attr(), and var() — the expressions inside CSS.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>CSS functions compute values at runtime. <code>calc()</code> performs arithmetic across units — <code>width: calc(100% - 100px);</code> — with <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and parentheses. Spaces around <code>+</code> and <code>-</code> are required.</p>
+    <p><code>attr()</code> reads an attribute value and returns it, most often inside <code>content</code> for pseudo-elements. <code>var()</code> reads a custom property (CSS variable) — covered properly in the next chapter.</p>
+    <pre class="code-example"><code>/* calc for fluid width */
+#div1 {
+  position: absolute;
+  left: 50px;
+  width: calc(100% - 100px);
+}
+
+/* attr for a printed label */
+blockquote[data-mark]::before {
+  content: attr(data-mark);
+}</code></pre>
+    <p>These functions make CSS compute rather than copy. Once you start using <code>calc()</code> for paddings and <code>var()</code> for theming, the stylesheet starts to feel like a small program.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>calc()</code> performs arithmetic across units.</li>
+      <li>Spaces around <code>+</code> and <code>-</code> are required inside <code>calc()</code>.</li>
+      <li><code>attr()</code> reads an attribute value, often for <code>content</code>.</li>
+      <li><code>var()</code> reads a custom property.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Set a box's width to 100% minus 40 pixels using <code>calc()</code>.</li>
+      <li>Why does <code>calc(100%-10px)</code> fail?</li>
+      <li>Use <code>attr()</code> to print a data attribute as a label.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Counters</button>
+    <button class="nav-button" data-nav="next">CSS Variables →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 37
+     ============================================================ -->
+<section id="ch-css-variables" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 37</p>
+    <h2>CSS Variables</h2>
+    <p class="chapter-tagline">Reusable values that cascade, change with media queries, and make themes possible.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Custom properties — often called CSS variables — are declared with a double-dash prefix and read with <code>var()</code>. They cascade like any other property, so a variable defined on <code>:root</code> is available to the entire document; a variable defined inside a rule is available only within that rule's subtree.</p>
+    <p>Variable names are case-sensitive. They can hold any CSS value — colours, dimensions, even whole declarations. Empty values are legal, but a variable used outside <code>var()</code> is not. Units belong on the value, not on the <code>var()</code> call.</p>
+    <pre class="code-example"><code>:root {
+  --red: #b00;
+  --blue: #4679bd;
+  --grey: #ddd;
+  --gap: 10px;
+}
+
+.box {
+  color: var(--red);
+  border: 1px solid var(--red);
+  padding: var(--gap);
+}
+
+/* Variables can be redefined in a media query */
+@media only screen and (max-width: 767px) {
+  :root {
+    --gap: 4px;
+  }
+}</code></pre>
+    <p>Because they cascade, variables can be overridden per component without touching the definition. That is how theming works in modern CSS.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Custom properties are declared with <code>--</code> and read with <code>var()</code>.</li>
+      <li>They cascade and inherit like ordinary properties.</li>
+      <li>Units belong on the value, not on the <code>var()</code> call.</li>
+      <li>Redefining a variable in a media query updates everything that uses it.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Declare a primary colour variable and use it for the heading and the button.</li>
+      <li>What happens when two rules set the same variable to different values?</li>
+      <li>Why is <code>width: var(--w)px</code> invalid?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Functions</button>
+    <button class="nav-button" data-nav="next">Single Element Shapes →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 38
+     ============================================================ -->
+<section id="ch-single-element-shapes" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 38</p>
+    <h2>Single Element Shapes</h2>
+    <p class="chapter-tagline">Triangles, circles, trapezoids, bursts — all with borders and pseudo-elements.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Before SVG, CSS enthusiasts drew shapes with borders and transforms. A triangle is an element with <code>width: 0; height: 0;</code> and coloured borders on one side, transparent borders on the others. A circle is a square with <code>border-radius: 50%</code>. A trapezoid is the same triangle idea, wider.</p>
+    <p>Pseudo-elements extend the trick. A burst is two rotated squares; a cube is three skewed rectangles; a pyramid is two coloured borders skewed and rotated into place.</p>
+    <pre class="code-example"><code>/* Up triangle */
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid rgb(246, 156, 85);
+}
+
+/* Circle */
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(246, 156, 85);
+}</code></pre>
+    <p>These techniques are fun and sometimes useful, but for complex shapes, prefer SVG. CSS shapes are best for icons and decorative accents that must remain resolution-independent.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Triangles come from borders on a zero-size element.</li>
+      <li><code>border-radius: 50%</code> turns a square into a circle.</li>
+      <li>Pseudo-elements extend shapes into bursts, cubes, and pyramids.</li>
+      <li>For complex shapes, prefer SVG over CSS hacks.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Build an up-pointing triangle using borders.</li>
+      <li>Turn a 100×100 square into a circle.</li>
+      <li>Build a simple four-point burst using a pseudo-element.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← CSS Variables</button>
+    <button class="nav-button" data-nav="next">Columns →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 39
+     ============================================================ -->
+<section id="ch-columns" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 39</p>
+    <h2>Columns</h2>
+    <p class="chapter-tagline">Newspaper-style column flow in one declaration.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The multi-column layout lets you flow content into several columns without changing the markup. <code>column-count</code> sets how many columns; <code>column-width</code> sets a minimum width and lets the browser fit as many columns as possible.</p>
+    <p>You can combine them: set both, and the browser prefers <code>column-width</code> but caps at <code>column-count</code>. The <code>columns</code> shorthand sets both at once.</p>
+    <pre class="code-example"><code>.multi-columns {
+  column-count: 2;
+}
+
+/* Or with a width */
+.multi-columns {
+  column-width: 100px;
+}
+
+/* Both together */
+.multi-columns {
+  columns: 2 100px;
+}</code></pre>
+    <p>Vendor prefixes (<code>-webkit-</code> and <code>-moz-</code>) are still useful if you support older browsers. Modern browsers accept the unprefixed form.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>column-count</code> sets the number of columns.</li>
+      <li><code>column-width</code> sets a minimum column width.</li>
+      <li>The <code>columns</code> shorthand sets both.</li>
+      <li>Vendor prefixes remain useful for older browsers.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Split a paragraph into two columns.</li>
+      <li>Set a minimum column width of 150px with up to four columns.</li>
+      <li>Why might <code>column-width</code> be more responsive than <code>column-count</code>?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Single Element Shapes</button>
+    <button class="nav-button" data-nav="next">Multiple columns →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 40
+     ============================================================ -->
+<section id="ch-multiple-columns" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 40</p>
+    <h2>Multiple columns</h2>
+    <p class="chapter-tagline">Gaps, rules, and balanced columns.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The multi-column properties form a complete set. <code>column-count</code> sets the number of columns, <code>column-gap</code> adds space between them, and <code>column-rule</code> draws a vertical line down each gap. <code>column-span: all</code> lets an element — say a heading — span every column.</p>
+    <p>Content flows top-to-bottom, then left-to-right, so the reading order for a long article is natural. Balancing the last column against the others is done automatically, but a <code>column-fill: auto</code> on a fixed-height container can change that.</p>
+    <pre class="code-example"><code>section {
+  columns: 3;
+  column-gap: 40px;
+  column-rule: 2px solid gray;
+}</code></pre>
+    <p>Multi-column layout is perfect for long prose — reports, documentation, blog posts. It is not designed for interactive components or complex grid-like layouts.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>column-gap</code> adds space between columns.</li>
+      <li><code>column-rule</code> draws lines between columns.</li>
+      <li><code>column-span: all</code> lets an element span every column.</li>
+      <li>Multi-column layout is best for flowing prose.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Flow an article into three columns with 40px gaps and a 2px grey rule.</li>
+      <li>Make a heading span all three columns.</li>
+      <li>When is multi-column layout the wrong tool?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Columns</button>
+    <button class="nav-button" data-nav="next">Inline-Block Layout →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 41
+     ============================================================ -->
+<section id="ch-inline-block-layout" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 41</p>
+    <h2>Inline-Block Layout</h2>
+    <p class="chapter-tagline">Navigation bars and justified rows without flexbox.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p><code>inline-block</code> elements sit in a row like text but respect width and height. That makes them ideal for navigation bars, tag lists, and card rows — the kinds of layouts that need to wrap and space evenly.</p>
+    <p>The classic trick for a justified row is <code>text-align: justify</code> on the parent plus an <code>::after</code> element that forces a justified line. Each item stays inline-block; the parent spaces them automatically.</p>
+    <pre class="code-example"><code>nav ul {
+  list-style: none;
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+nav ul::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+nav li {
+  display: inline-block;
+}</code></pre>
+    <p>Flexbox does this more directly — but inline-block remains useful for lightweight horizontal rows where flexbox would be overkill.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>inline-block</code> sits in the flow of text but respects width and height.</li>
+      <li><code>text-align: justify</code> plus an <code>::after</code> spacer justifies items.</li>
+      <li>Inline-block is a lightweight alternative to Flexbox for simple rows.</li>
+      <li>Whitespace between inline-block elements becomes visible — hence the spacer.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Build a justified navigation bar with inline-block items.</li>
+      <li>Why does whitespace between inline-block elements matter?</li>
+      <li>When would Flexbox be a better choice than inline-block?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Multiple columns</button>
+    <button class="nav-button" data-nav="next">Inheritance →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 42
+     ============================================================ -->
+<section id="ch-inheritance" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 42</p>
+    <h2>Inheritance</h2>
+    <p class="chapter-tagline">Properties that flow from parent to child — and how to force the ones that do not.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Some CSS properties inherit automatically. Set <code>color</code> on a parent and every child gets it. The same goes for <code>font-family</code>, <code>font-size</code>, <code>line-height</code>, <code>text-align</code>, and <code>visibility</code>. Others — <code>margin</code>, <code>padding</code>, <code>background</code>, <code>display</code>, <code>border</code> — do not.</p>
+    <p>The <code>inherit</code> value forces a property to take the parent's computed value. That is how you pull a padding or margin down into a child when the browser would otherwise default it to 0.</p>
+    <pre class="code-example"><code>#myContainer {
+  color: red;
+  padding: 5px;
+}
+
+/* Children inherit color automatically */
+
+/* Force padding to inherit */
+#myContainer p {
+  padding: inherit;
+}</code></pre>
+    <p>Inheritance keeps stylesheets short. When you find yourself repeating a colour or font across every child, set it once on the parent instead.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Font, colour, text-align, line-height, and visibility inherit automatically.</li>
+      <li>Margin, padding, background, display, and border do not.</li>
+      <li><code>inherit</code> forces any property to take the parent's computed value.</li>
+      <li>Use inheritance to keep stylesheets short.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Which of these inherit: <code>color</code>, <code>margin</code>, <code>font-family</code>?</li>
+      <li>Force a paragraph to inherit its parent's padding.</li>
+      <li>Why is inheritance a benefit for global typography?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Inline-Block Layout</button>
+    <button class="nav-button" data-nav="next">CSS Image Sprites →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 43
+     ============================================================ -->
+<section id="ch-css-image-sprites" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 43</p>
+    <h2>CSS Image Sprites</h2>
+    <p class="chapter-tagline">One image, many icons — fewer requests, faster pages.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>An image sprite is a single image file that packs many smaller images into a grid. CSS can then show one cell at a time by setting <code>background-image</code> to the sprite and <code>background-position</code> to the negative offset of the desired cell. One HTTP request serves every icon in the sheet.</p>
+    <p>Sprites were essential in the HTTP/1.1 era and are still useful for icon sets. In modern HTTP/2 setups, the performance gain is smaller, but sprites remain a clean way to ship a coherent icon family.</p>
+    <pre class="code-example"><code>.icon {
+  background: url("icons-sprite.png");
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.icon1 { background-position:   0px 0px; }
+.icon2 { background-position: -20px 0px; }
+.icon3 { background-position: -40px 0px; }</code></pre>
+    <p>Each sprite is normally 16–32px, so offsets are easily calculated. Retina displays may need a 2× sprite plus <code>background-size</code> scaled to the CSS dimensions.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>A sprite packs many images into one file.</li>
+      <li><code>background-position</code> shifts to the desired cell.</li>
+      <li>Sprites reduce HTTP requests.</li>
+      <li>Retina screens need a 2× sprite and matching <code>background-size</code>.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Show the second icon in a 3-icon sprite.</li>
+      <li>Why do sprites improve page performance?</li>
+      <li>How would you prepare a sprite for Retina displays?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Inheritance</button>
+    <button class="nav-button" data-nav="next">Clipping and Masking →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 44
+     ============================================================ -->
+<section id="ch-clipping-and-masking" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Four · Advanced Layout &amp; Techniques · Chapter 44</p>
+    <h2>Clipping and Masking</h2>
+    <p class="chapter-tagline">Cutting shapes out of elements — and fading them through masks.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Clipping and masking both hide parts of an element, but they work differently. Clipping defines a vector path — anything outside the path is transparent. Masking uses an image or gradient to decide which parts of the element are visible.</p>
+    <p><code>clip-path</code> accepts shapes: <code>circle()</code>, <code>ellipse()</code>, <code>polygon()</code>, and URL references to SVG paths. <code>mask-image</code> takes an image or gradient — a linear gradient from white to transparent fades the element out, a radial gradient punches a hole.</p>
+    <pre class="code-example"><code>/* Clip to a triangle */
+.tri {
+  width: 200px;
+  height: 200px;
+  background: teal;
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+
+/* Mask with a gradient fade */
+.fade {
+  width: 200px;
+  height: 200px;
+  background: url('photo.jpg');
+  mask-image: linear-gradient(to right, white, transparent);
+}</code></pre>
+    <p>Masks and clips can be combined with transitions to create reveal effects, but browser support for masking is still uneven — provide fallbacks.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>clip-path</code> defines a vector clipping path.</li>
+      <li><code>mask-image</code> reveals the element through an image or gradient.</li>
+      <li>Shapes include <code>circle()</code>, <code>polygon()</code>, and gradients.</li>
+      <li>Masking support is uneven — provide fallbacks.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Clip a square div into a triangle.</li>
+      <li>Fade an image from solid to transparent using a mask.</li>
+      <li>What is the difference between clipping and masking?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← CSS Image Sprites</button>
+    <button class="nav-button" data-nav="next">Part Five →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     PART FIVE DIVIDER
+     ============================================================ -->
+<section id="part-five" class="book-page cover-page part-page part-five">
+  <div class="cover-content">
+    <p class="part-number">Part Five</p>
+    <h1>Professional CSS</h1>
+    <p class="part-desc">Patterns, prefixes, resets, and performance — writing CSS that scales.</p>
+  </div>
+  <div class="book-nav">
+    <button class="nav-button" data-nav="next">Begin Chapter 45 →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 45
+     ============================================================ -->
+<section id="ch-fragmentation" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 45</p>
+    <h2>Fragmentation</h2>
+    <p class="chapter-tagline">Page breaks that respect the reader.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Fragmentation controls where content splits across pages — on screen, in print, or in a multi-column layout. The properties are <code>page-break-before</code>, <code>page-break-after</code>, and <code>page-break-inside</code>, with values <code>auto</code>, <code>always</code>, <code>avoid</code>, <code>left</code>, and <code>right</code>.</p>
+    <p>Print stylesheets are the most common use. A well-chosen set of rules keeps headings attached to the paragraphs that follow them, starts each major section on a new page, and prevents paragraphs from splitting awkwardly.</p>
+    <pre class="code-example"><code>@media print {
+  h1 { page-break-before: always; }
+  h2 { page-break-after: avoid; }
+  p  { page-break-inside: avoid; }
+}</code></pre>
+    <p>Browsers treat these properties as hints rather than guarantees, but they greatly improve the reading experience when respected.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Fragmentation controls where content breaks across pages.</li>
+      <li>Properties: <code>page-break-before</code>, <code>page-break-after</code>, <code>page-break-inside</code>.</li>
+      <li><code>avoid</code> keeps paragraphs and headings together.</li>
+      <li>Most useful inside <code>@media print</code>.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Start every h1 on a new printed page.</li>
+      <li>Prevent paragraphs from splitting across pages.</li>
+      <li>Why are these properties described as hints?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Part Five</button>
+    <button class="nav-button" data-nav="next">CSS Object Model (CSSOM) →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 46
+     ============================================================ -->
+<section id="ch-css-object-model" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 46</p>
+    <h2>CSS Object Model (CSSOM)</h2>
+    <p class="chapter-tagline">How the browser turns stylesheets into a model it can render and modify.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>The browser parses your CSS into a tree of rules called the <strong>CSSOM</strong>, just as it parses HTML into the DOM. It then combines the two into a render tree that the browser can paint. That is the pipeline: HTML → DOM, CSS → CSSOM, DOM + CSSOM → render tree → screen.</p>
+    <p>JavaScript can reach into the CSSOM to add, remove, or change rules. <code>document.styleSheets[0].cssRules</code> returns the rule list; <code>insertRule()</code> appends a new rule; <code>deleteRule()</code> removes one. This is how runtime theming and dynamic stylesheets are implemented.</p>
+    <pre class="code-example"><code>var sheet = document.styleSheets[0].cssRules;
+var end = sheet.length - 1;
+
+sheet.insertRule(
+  "body { background-image: url('bg.png'); }",
+  end
+);</code></pre>
+    <p>The CSSOM is also what devtools show you when you inspect an element's computed styles. Understanding it makes "why is my style being overridden?" easier to answer.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>The browser builds a CSSOM from parsed stylesheets.</li>
+      <li>DOM plus CSSOM produces the render tree.</li>
+      <li>JavaScript can insert or delete CSS rules through the CSSOM.</li>
+      <li>Devtools' computed styles come from the CSSOM.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Describe the pipeline from HTML and CSS to pixels.</li>
+      <li>Insert a new rule for the body using <code>insertRule()</code>.</li>
+      <li>Why is understanding the CSSOM useful when debugging styles?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Fragmentation</button>
+    <button class="nav-button" data-nav="next">Feature Queries →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 47
+     ============================================================ -->
+<section id="ch-feature-queries" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 47</p>
+    <h2>Feature Queries</h2>
+    <p class="chapter-tagline">Ask the browser what it can do — then style accordingly.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p><code>@supports</code> applies CSS only if the browser understands a given declaration. It is a graceful way to use modern features without breaking older browsers — wrap the modern CSS in a feature query, and older browsers simply skip it.</p>
+    <p>The syntax mirrors <code>@media</code>: <code>@supports (display: flex) { … }</code>. Conditions can be combined with <code>and</code>, <code>or</code>, and <code>not</code>, and grouped with parentheses. Multiple features can be tested at once.</p>
+    <pre class="code-example"><code>@supports (display: flex) {
+  .container {
+    display: flex;
+  }
+}
+
+@supports (transform: translateZ(1px)) and (perspective: 1px) {
+  .fancy-3d {
+    transform: perspective(500px) translateZ(20px);
+  }
+}</code></pre>
+    <p>Feature queries are safer than user-agent sniffing and less fragile than vendor prefixes. Use them whenever a CSS feature might not be supported.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>@supports</code> applies CSS conditionally on feature support.</li>
+      <li>Conditions combine with <code>and</code>, <code>or</code>, and <code>not</code>.</li>
+      <li>Multiple features can be tested at once.</li>
+      <li>Safer than user-agent sniffing and vendor prefixes.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Apply flexbox styles only if <code>display: flex</code> is supported.</li>
+      <li>Test for two features at once with <code>and</code>.</li>
+      <li>Why is <code>@supports</code> better than checking the browser name?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← CSS Object Model (CSSOM)</button>
+    <button class="nav-button" data-nav="next">Stacking Context →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 48
+     ============================================================ -->
+<section id="ch-stacking-context" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 48</p>
+    <h2>Stacking Context</h2>
+    <p class="chapter-tagline">Why z-index sometimes feels broken.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Elements on a page are rendered in a 3D coordinate system, with the z-axis pointing toward the viewer. <code>z-index</code> controls each element's position along that axis — but only within its <strong>stacking context</strong>.</p>
+    <p>A stacking context is a group of elements that stack together as a unit. The root element creates one; so do positioned elements with a <code>z-index</code>, elements with <code>opacity</code> less than 1, <code>transform</code>, <code>filter</code>, and several other properties. Once a child context closes, its <code>z-index</code> is resolved relative to its parent, not to the root of the page.</p>
+    <pre class="code-example"><code>#div1 { position: relative; z-index: 5; }
+#div2 { position: relative; z-index: 2; }
+#div3 { position: absolute; z-index: 4; }
+
+/* Children of #div3 are stacked within #div3,
+   not against #div1 and #div2. */
+#div4 { position: relative; z-index: 6; }</code></pre>
+    <p>The classic symptom of a stacking problem is a tooltip whose z-index of 9999 still sits under a modal, because the two elements live in different contexts and the modal's context has a higher overall z-index.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>A stacking context groups elements that stack as a unit.</li>
+      <li><code>z-index</code> only applies within its stacking context.</li>
+      <li>Many properties — <code>opacity</code>, <code>transform</code>, <code>filter</code> — create new contexts.</li>
+      <li>Nested contexts explain many "z-index doesn't work" bugs.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Explain why a z-index of 9999 might still render under an unrelated element.</li>
+      <li>Name three properties that create a stacking context.</li>
+      <li>How would you fix a tooltip that hides behind a modal?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Feature Queries</button>
+    <button class="nav-button" data-nav="next">Block Formatting Contexts →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 49
+     ============================================================ -->
+<section id="ch-block-formatting-contexts" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 49</p>
+    <h2>Block Formatting Contexts</h2>
+    <p class="chapter-tagline">The invisible container that changes how floats and margins behave.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>A <strong>block formatting context</strong> (BFC) is a region in which block-level boxes lay out independently of what happens outside. Inside a BFC, floats do not escape, margins do not collapse with outside elements, and the region contains its own floats.</p>
+    <p>Several properties create a BFC. The most useful is <code>overflow</code> with any value other than <code>visible</code>. Others include <code>float</code>, <code>position: absolute</code>/<code>fixed</code>, <code>display: flow-root</code>, and <code>display: inline-block</code>.</p>
+    <pre class="code-example"><code>/* Float a picture, then contain it */
+img {
+  float: left;
+  width: 100px;
+  margin-right: 10px;
+}
+
+/* Without BFC, this parent collapses */
+.div1 { background: #f1f1f1; }
+
+/* With BFC, the parent contains the float */
+.div2 {
+  background: #f1f1f1;
+  overflow: hidden;
+}</code></pre>
+    <p>Before Flexbox and Grid, the BFC was the main tool for containing floats. It remains essential for understanding margin collapsing and for fixing layout bugs in older codebases.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>A BFC contains its own floats and prevents margin escape.</li>
+      <li><code>overflow: hidden</code> is the easiest way to create one.</li>
+      <li><code>float</code>, <code>position: absolute</code>, and <code>display: flow-root</code> also create BFCs.</li>
+      <li>BFCs explain many float- and margin-related layout bugs.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Use <code>overflow: hidden</code> to contain a floated image.</li>
+      <li>Name three properties that create a BFC.</li>
+      <li>Why is <code>display: flow-root</code> considered the cleanest BFC trigger?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Stacking Context</button>
+    <button class="nav-button" data-nav="next">Vertical Centering →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 50
+     ============================================================ -->
+<section id="ch-vertical-centering" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 50</p>
+    <h2>Vertical Centering</h2>
+    <p class="chapter-tagline">Five techniques, one problem — with the modern answer at last.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Vertical centering has a long history of workarounds. The modern answer is Flexbox: <code>display: flex; align-items: center; justify-content: center;</code> centres a child in both axes. The transform trick — <code>top: 50%; transform: translate(-50%, -50%)</code> — works without a flex parent.</p>
+    <p>Older techniques still appear in legacy code. <code>display: table</code> plus <code>display: table-cell; vertical-align: middle;</code> works in any browser. <code>line-height</code> equal to the container height centres a single line of text. Absolute positioning with <code>margin: auto</code> and four zeroes centres a fixed-size element. The ghost-element trick uses a <code>::before</code> with height 100%.</p>
+    <pre class="code-example"><code>/* Flexbox — the modern choice */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Transform */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Table display */
+.outer { display: table; height: 100%; width: 100%; }
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}</code></pre>
+    <p>Pick the technique that matches the surrounding layout. If Flexbox is already in use, use Flexbox. If the element must float free of its parent, use the transform trick.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Flexbox centres both axes with two declarations.</li>
+      <li>The transform trick works without a flex parent.</li>
+      <li>Table display and line-height handle legacy requirements.</li>
+      <li>Choose the technique that matches the surrounding layout.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Centre a child in a 500×500 parent using Flexbox.</li>
+      <li>Centre a fixed-size box with absolute positioning and auto margins.</li>
+      <li>Why does <code>line-height</code> centring fail when the text wraps?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Block Formatting Contexts</button>
+    <button class="nav-button" data-nav="next">Object Fit and Placement →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 51
+     ============================================================ -->
+<section id="ch-object-fit-and-placement" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 51</p>
+    <h2>Object Fit and Placement</h2>
+    <p class="chapter-tagline">How images and video behave inside a fixed-size box.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p><code>object-fit</code> decides how an <code>&lt;img&gt;</code> or <code>&lt;video&gt;</code> fills its content box. <code>fill</code> stretches to fit, ignoring aspect ratio. <code>contain</code> fits entirely inside the box, preserving aspect ratio. <code>cover</code> fills the box entirely, cropping if necessary. <code>none</code> ignores the box size. <code>scale-down</code> uses whichever is smaller between <code>none</code> and <code>contain</code>.</p>
+    <p><code>object-position</code> controls where the object sits inside its box — useful with <code>cover</code>, where parts of the image are cropped.</p>
+    <pre class="code-example"><code>/* Fill and crop, keeping aspect ratio */
+.hero img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Fit entirely, letterbox if needed */
+.thumb img {
+  object-fit: contain;
+}</code></pre>
+    <p>Object-fit is a huge time-saver for responsive images and media grids. Before it existed, developers relied on background images, which could not be <code>&lt;img&gt;</code> elements with alt text — a significant accessibility loss.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li><code>object-fit</code> controls how an image fills its box.</li>
+      <li><code>cover</code> fills and crops; <code>contain</code> fits and letterboxes.</li>
+      <li><code>object-position</code> sets the anchor point of the fitted object.</li>
+      <li>Object-fit replaces many background-image tricks, with alt text intact.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Make an image fill a 400×200 banner without distortion.</li>
+      <li>What does <code>object-fit: contain</code> do that <code>cover</code> does not?</li>
+      <li>Why is object-fit better than a background-image for content images?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Vertical Centering</button>
+    <button class="nav-button" data-nav="next">CSS design patterns →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 52
+     ============================================================ -->
+<section id="ch-css-design-patterns" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 52</p>
+    <h2>CSS design patterns</h2>
+    <p class="chapter-tagline">Blocks, elements, modifiers — naming conventions that scale.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>As CSS grows, naming becomes the hard part. <strong>BEM</strong> — Block, Element, Modifier — is a naming convention that keeps selectors readable and specificities flat. A <em>block</em> is a standalone component (a card, a menu); an <em>element</em> is a part of a block (a title, a list item); a <em>modifier</em> is a variant (disabled, highlighted).</p>
+    <p>Classes follow a pattern: <code>.block</code>, <code>.block__element</code>, <code>.block--modifier</code>, and <code>.block__element--modifier</code>. Each class stands alone, so specificity stays at a single class level.</p>
+    <pre class="code-example"><code>.form { }                /* Block */
+.form--simple { }        /* Block + modifier */
+.form__input { }         /* Element */
+.form__submit { }        /* Element */
+.form__submit--disabled { }</code></pre>
+    <p>BEM is not the only answer — OOCSS and SMACSS offer different structures — but the underlying idea is the same: make classes mean one thing, so styling stays predictable as the project grows.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>BEM stands for Block, Element, Modifier.</li>
+      <li>Class names follow <code>.block__element--modifier</code>.</li>
+      <li>Each class stands alone, keeping specificity low.</li>
+      <li>Naming conventions make CSS scale beyond a few pages.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Write BEM class names for a menu with a highlighted item.</li>
+      <li>Why does BEM keep specificity flat?</li>
+      <li>Name one other CSS design pattern besides BEM.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Object Fit and Placement</button>
+    <button class="nav-button" data-nav="next">Browser Support &amp; Prefixes →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 53
+     ============================================================ -->
+<section id="ch-browser-support-and-prefixes" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 53</p>
+    <h2>Browser Support &amp; Prefixes</h2>
+    <p class="chapter-tagline">Vendor prefixes, old browsers, and the cost of new features.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Modern CSS features often ship behind vendor prefixes before they standardise. <code>-webkit-</code> covers Chrome, Safari, and Android; <code>-moz-</code> covers Firefox; <code>-ms-</code> covers Internet Explorer and Edge; <code>-o-</code> covers old Opera.</p>
+    <p>Prefixes are used for transitions, transforms, gradients, and many other properties. The safest pattern is to write the prefixed declarations first and the standard declaration last, so browsers that understand both use the standard form.</p>
+    <pre class="code-example"><code>div {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition:    all 0.4s ease;
+  transition:         all 0.4s ease;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  transform:         rotate(45deg);
+}</code></pre>
+    <p>Modern tools like Autoprefixer generate prefixes from your unprefixed CSS, which is usually the cleanest approach. Write standard CSS; let the build step handle the rest.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Vendor prefixes target pre-standard implementations.</li>
+      <li>Prefixes include <code>-webkit-</code>, <code>-moz-</code>, <code>-ms-</code>, <code>-o-</code>.</li>
+      <li>Write prefixed declarations first, standard last.</li>
+      <li>Autoprefixer automates prefixing from standard CSS.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Write a transition that includes prefixed and unprefixed declarations.</li>
+      <li>Why is the standard declaration written last?</li>
+      <li>What does Autoprefixer do?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← CSS design patterns</button>
+    <button class="nav-button" data-nav="next">Normalizing Browser Styles →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 54
+     ============================================================ -->
+<section id="ch-normalizing-browser-styles" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 54</p>
+    <h2>Normalizing Browser Styles</h2>
+    <p class="chapter-tagline">Making the browser's default stylesheet predictable.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Every browser applies a default stylesheet to HTML. Headings have margins, lists have padding, links are blue and underlined. Because these defaults are not identical across browsers, a page can look subtly different in each. Two strategies address this: <strong>resets</strong> and <strong>normalizers</strong>.</p>
+    <p>A reset (Eric Meyer's Reset CSS, for instance) strips browser defaults to zero. A normalizer (like normalize.css) keeps useful defaults but evens them out across browsers. Modern practice favours normalizing, since it leaves the useful defaults in place.</p>
+    <pre class="code-example"><code>/* Example from normalize.css */
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}</code></pre>
+    <p>Either strategy saves you from fighting the browser every time you style a page. Add one to the top of your stylesheet — or import it — and start designing from a consistent base.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Browsers ship different default stylesheets.</li>
+      <li>A reset zeroes out defaults; a normalizer evens them out.</li>
+      <li>normalize.css is the modern favourite.</li>
+      <li>Add a normalizer or reset at the top of the stylesheet.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Explain the difference between a reset and a normalizer.</li>
+      <li>Why do browsers apply default margins to headings?</li>
+      <li>Add a small normalizer that resets body margin.</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Browser Support &amp; Prefixes</button>
+    <button class="nav-button" data-nav="next">Internet Explorer Hacks →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 55
+     ============================================================ -->
+<section id="ch-internet-explorer-hacks" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 55</p>
+    <h2>Internet Explorer Hacks</h2>
+    <p class="chapter-tagline">The workarounds we used to need — and still encounter in legacy code.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Old versions of Internet Explorer had bugs and missing features that required specific workarounds. IE6 and IE7 did not support <code>inline-block</code> properly; the fix was <code>zoom: 1; *display: inline;</code>. IE8 and below lacked media queries. IE10 and above offered the <code>-ms-high-contrast</code> media query for accessibility modes.</p>
+    <p>These hacks rely on bugs in IE's CSS parser: the star prefix (<code>*property</code>) is ignored by modern browsers, so only IE6/7 apply the rule. The <code>@media \0screen</code> trick targets IE8 specifically.</p>
+    <pre class="code-example"><code>/* IE6/7 inline-block */
+.el {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+}
+
+/* IE8 only */
+@media \0screen {
+  .hide-on-ie8 { display: none; }
+}
+
+/* IE10+ high contrast */
+@media screen and (-ms-high-contrast: active) {
+  .header { background: #fff; color: #000; }
+}</code></pre>
+    <p>In 2024 and beyond, IE is retired. But enterprise codebases still contain these rules, and reading them is part of maintaining legacy CSS.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>IE6/7 needed <code>zoom: 1; *display: inline;</code> for inline-block.</li>
+      <li><code>*property</code> targets IE6/7 only.</li>
+      <li><code>@media \0screen</code> targets IE8 only.</li>
+      <li>IE10+ offers the <code>-ms-high-contrast</code> media query for accessibility.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Why does the <code>*display</code> hack target only IE6/7?</li>
+      <li>Which IE version needed media-query polyfills?</li>
+      <li>Should you write new IE hacks today? Why or why not?</li>
+    </ol>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Normalizing Browser Styles</button>
+    <button class="nav-button" data-nav="next">Performance →</button>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 56
+     ============================================================ -->
+<section id="ch-performance" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Part Five · Professional CSS · Chapter 56</p>
+    <h2>Performance</h2>
+    <p class="chapter-tagline">Smooth animation is a choice — and CSS gives you the tools.</p>
+  </div>
+
+  <div class="chapter-story">
+    <p>Not every CSS animation is created equal. Animating <code>left</code> and <code>top</code> forces the browser to recalculate layout on every frame. Animating <code>transform</code> and <code>opacity</code> lets the browser offload the work to the GPU. The result is the difference between 12ms and 1.3ms of per-frame work.</p>
+    <p><code>will-change: transform, opacity</code> hints the browser to prepare paint layers in advance. Used sparingly, it improves animation performance; used everywhere, it can cause memory problems and layout bugs.</p>
+    <pre class="code-example"><code>/* Slow: triggers layout every frame */
+#box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: left 0.5s, top 0.5s;
+}
+#box.active {
+  left: 100px;
+  top: 100px;
+}
+
+/* Fast: GPU-accelerated */
+#box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.5s;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+#box.active {
+  transform: translate3d(100px, 100px, 0);
+}</code></pre>
+    <p>Performance is not just a developer concern. A janky animation feels broken, and users notice. The habit of animating transforms first, and only touching layout when necessary, is the single biggest performance win available to a CSS author.</p>
+  </div>
+
+  <div class="chapter-ideas">
+    <h3>Key Ideas</h3>
+    <ul>
+      <li>Animating <code>left</code> and <code>top</code> triggers layout; <code>transform</code> and <code>opacity</code> do not.</li>
+      <li>GPU-accelerated properties keep animation at 60fps.</li>
+      <li><code>will-change</code> hints at upcoming animation — use sparingly.</li>
+      <li>Choosing transforms is the biggest performance win available in CSS.</li>
+    </ul>
+  </div>
+
+  <div class="chapter-questions">
+    <h3>Try It Yourself</h3>
+    <ol>
+      <li>Rewrite a <code>left</code>-based slide animation to use <code>transform</code>.</li>
+      <li>What does <code>will-change</code> do, and why should you not apply it to every element?</li>
+      <li>Why does animating layout properties cost more than animating transforms?</li>
+    </ol>
+  </div>
+
+<div class="book-nav">
+  <button class="nav-button" data-nav="prev">← Internet Explorer Hacks</button>
+  <button class="nav-button" data-nav="next">Glossary →</button>
+</div>
+</section>
+
+
+   
+
+
+
+
+
+   <!-- ============================================================
+     GLOSSARY
+     ============================================================ -->
+<section id="glossary" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Back Matter · Glossary</p>
+    <h2>Glossary</h2>
+    <p class="chapter-tagline">The terms you met along the way, in alphabetical order.</p>
+  </div>
+
+  <div class="chapter-story">
+    <dl>
+      <dt><strong>Absolute positioning</strong></dt>
+      <dd><code>position: absolute</code> removes an element from normal flow and positions it against its nearest positioned ancestor (or the viewport if none exists). The element no longer affects the layout of its siblings.</dd>
+
+      <dt><strong>Attribute selector</strong></dt>
+      <dd>Selects elements based on the presence or value of an attribute. Examples: <code>[disabled]</code>, <code>[type="checkbox"]</code>, <code>[href$=".pdf"]</code>.</dd>
+
+      <dt><strong>Block formatting context (BFC)</strong></dt>
+      <dd>A region in which block-level boxes lay out independently. Inside a BFC, floats are contained and margins do not collapse with outside elements. Created by <code>overflow: hidden</code>, <code>float</code>, <code>position: absolute/fixed</code>, and <code>display: flow-root</code>.</dd>
+
+      <dt><strong>Block-level element</strong></dt>
+      <dd>An element whose default display is <code>block</code>. It takes the full width of its parent and starts on a new line. Examples: <code>div</code>, <code>p</code>, <code>h1</code>.</dd>
+
+      <dt><strong>Box model</strong></dt>
+      <dd>The four-part structure of every element: content, padding, border, and margin. The full width is content + padding + border + margin.</dd>
+
+      <dt><strong>Box-sizing</strong></dt>
+      <dd>Controls whether <code>width</code> and <code>height</code> include padding and border. <code>content-box</code> (default) does not; <code>border-box</code> does.</dd>
+
+      <dt><strong>Cascade</strong></dt>
+      <dd>The algorithm that resolves conflicts between competing CSS rules. It considers origin, specificity, and source order.</dd>
+
+      <dt><strong>Class selector</strong></dt>
+      <dd>Selects elements with a given class. Written as <code>.name</code> and matches every element with <code>class="name"</code>.</dd>
+
+      <dt><strong>Clearfix</strong></dt>
+      <dd>A technique to make a parent contain its floated children, usually via a <code>::after</code> pseudo-element with <code>clear: both</code>.</dd>
+
+      <dt><strong>Combinator</strong></dt>
+      <dd>A character that expresses a relationship between selectors: descendant (space), child (<code>&gt;</code>), adjacent sibling (<code>+</code>), general sibling (<code>~</code>).</dd>
+
+      <dt><strong>Computed value</strong></dt>
+      <dd>The final value of a property after all relative values have been resolved — for example, an <code>em</code> converted to pixels.</dd>
+
+      <dt><strong>CSSOM</strong></dt>
+      <dd>The CSS Object Model: the browser's parsed representation of stylesheets, analogous to the DOM. JavaScript can read and modify it.</dd>
+
+      <dt><strong>Custom property</strong></dt>
+      <dd>A CSS variable declared with a <code>--</code> prefix and read with <code>var()</code>. Custom properties cascade and inherit.</dd>
+
+      <dt><strong>Declaration</strong></dt>
+      <dd>A single <code>property: value</code> pair inside a rule's declaration block.</dd>
+
+      <dt><strong>Display</strong></dt>
+      <dd>The property that controls how an element behaves in layout: <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>flex</code>, <code>grid</code>, <code>none</code>.</dd>
+
+      <dt><strong>Em</strong></dt>
+      <dd>A relative length unit equal to the element's current font-size (or the parent's, if not set). Values compound through nesting.</dd>
+
+      <dt><strong>Flexbox</strong></dt>
+      <dd>A one-dimensional layout model (<code>display: flex</code>) that distributes space among items along a row or column.</dd>
+
+      <dt><strong>Float</strong></dt>
+      <dd>Pushes an element to one side (<code>left</code> or <code>right</code>) and lets content flow around it. Floats were once used for layout; today they are best for text wrapping.</dd>
+
+      <dt><strong>Grid</strong></dt>
+      <dd>A two-dimensional layout model (<code>display: grid</code>) that lays out items in rows and columns simultaneously.</dd>
+
+      <dt><strong>ID selector</strong></dt>
+      <dd>Selects the single element with a given ID. Written as <code>#name</code> and should be unique on the page.</dd>
+
+      <dt><strong>Inheritance</strong></dt>
+      <dd>The mechanism by which some properties (colour, font, line-height) pass from parent to child automatically. Non-inherited properties can be forced to inherit with <code>inherit</code>.</dd>
+
+      <dt><strong>Inline element</strong></dt>
+      <dd>An element whose default display is <code>inline</code>. It sits in the flow of text and ignores <code>width</code> and <code>height</code>. Examples: <code>span</code>, <code>a</code>, <code>em</code>.</dd>
+
+      <dt><strong>Inline-block</strong></dt>
+      <dd>A display value that combines inline flow with block-like width and height control.</dd>
+
+      <dt><strong>Margin collapsing</strong></dt>
+      <dd>The rule that two adjacent vertical margins merge into the larger of the two. Horizontal margins do not collapse.</dd>
+
+      <dt><strong>Media query</strong></dt>
+      <dd>An <code>@media</code> rule that applies CSS only when certain screen conditions (width, orientation, resolution) are met. The backbone of responsive design.</dd>
+
+      <dt><strong>Normalizer</strong></dt>
+      <dd>A stylesheet that evens out browser default styles across browsers, keeping useful defaults. Example: <code>normalize.css</code>.</dd>
+
+      <dt><strong>Pseudo-class</strong></dt>
+      <dd>A selector that matches elements by state or position: <code>:hover</code>, <code>:focus</code>, <code>:first-child</code>, <code>:nth-child(3)</code>.</dd>
+
+      <dt><strong>Pseudo-element</strong></dt>
+      <dd>A selector that styles a sub-part of an element: <code>::before</code>, <code>::after</code>, <code>::first-letter</code>, <code>::first-line</code>.</dd>
+
+      <dt><strong>Rem</strong></dt>
+      <dd>A relative length unit equal to the root (<code>&lt;html&gt;</code>) font-size. Unlike <code>em</code>, <code>rem</code> does not compound.</dd>
+
+      <dt><strong>Reset</strong></dt>
+      <dd>A stylesheet that zeroes out all browser default styles. Example: Eric Meyer's Reset CSS.</dd>
+
+      <dt><strong>Rule</strong></dt>
+      <dd>A selector plus a declaration block: <code>h1 { color: green; }</code>.</dd>
+
+      <dt><strong>Selector</strong></dt>
+      <dd>The part of a rule that names which elements to style. Examples: <code>div</code>, <code>.card</code>, <code>#main</code>.</dd>
+
+      <dt><strong>Shorthand</strong></dt>
+      <dd>A property that sets several longhands at once, such as <code>margin</code>, <code>font</code>, or <code>background</code>.</dd>
+
+      <dt><strong>Specificity</strong></dt>
+      <dd>The weight of a selector, scored on three axes: IDs (A), classes/attributes/pseudo-classes (B), and types/pseudo-elements (C). Higher specificity wins.</dd>
+
+      <dt><strong>Stacking context</strong></dt>
+      <dd>A group of elements that stack together as a unit. <code>z-index</code> values are resolved within their stacking context, not across the whole page.</dd>
+
+      <dt><strong>Transform</strong></dt>
+      <dd>A property that applies geometric operations: <code>rotate()</code>, <code>scale()</code>, <code>skew()</code>, <code>translate()</code>. Transforms do not affect layout.</dd>
+
+      <dt><strong>Transition</strong></dt>
+      <dd>A property that animates the change between two states of another property over a given duration and easing curve.</dd>
+
+      <dt><strong>Vendor prefix</strong></dt>
+      <dd>A browser-specific prefix (<code>-webkit-</code>, <code>-moz-</code>, <code>-ms-</code>, <code>-o-</code>) used for properties that are not yet standardised.</dd>
+
+      <dt><strong>Viewport</strong></dt>
+      <dd>The visible area of the browser window. Viewport units (<code>vh</code>, <code>vw</code>, <code>vmin</code>, <code>vmax</code>) are percentages of it.</dd>
+
+      <dt><strong>Z-index</strong></dt>
+      <dd>The property that controls stacking order among positioned elements. Higher values appear in front. Only applies within a stacking context.</dd>
+    </dl>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Performance</button>
+    <button class="nav-button" data-nav="next">Appendix →</button>
+  </div>
+</section>
+
+
+
+
+
+   <!-- ============================================================
+     APPENDIX
+     ============================================================ -->
+<section id="appendix" class="book-page chapter-page">
+  <div class="chapter-header">
+    <p class="chapter-part">Back Matter · Appendix</p>
+    <h2>Appendix</h2>
+    <p class="chapter-tagline">Quick references and further reading.</p>
+  </div>
+
+  <div class="chapter-story">
+    <h3>Appendix A — CSS Property Quick Reference</h3>
+
+    <h4>Layout &amp; Box Model</h4>
+    <dl>
+      <dt><code>display</code></dt>
+      <dd>block, inline, inline-block, flex, grid, table, none</dd>
+      <dt><code>position</code></dt>
+      <dd>static, relative, absolute, fixed, sticky</dd>
+      <dt><code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></dt>
+      <dd>Offsets for positioned elements</dd>
+      <dt><code>z-index</code></dt>
+      <dd>Stacking order (only applies to positioned elements)</dd>
+      <dt><code>float</code></dt>
+      <dd>left, right, none</dd>
+      <dt><code>clear</code></dt>
+      <dd>left, right, both, none</dd>
+      <dt><code>overflow</code></dt>
+      <dd>visible, hidden, scroll, auto</dd>
+      <dt><code>box-sizing</code></dt>
+      <dd>content-box, border-box</dd>
+      <dt><code>width</code>, <code>height</code></dt>
+      <dd>Size of the content box (or border box with <code>box-sizing: border-box</code>)</dd>
+      <dt><code>margin</code>, <code>padding</code></dt>
+      <dd>Shorthand for four sides (TRouBLe order)</dd>
+      <dt><code>border</code></dt>
+      <dd>Width, style, colour</dd>
+      <dt><code>outline</code></dt>
+      <dd>Like border, but outside the box and takes no space</dd>
+    </dl>
+
+    <h4>Flexbox &amp; Grid</h4>
+    <dl>
+      <dt><code>display: flex</code></dt>
+      <dd>Creates a flex container</dd>
+      <dt><code>flex-direction</code></dt>
+      <dd>row, row-reverse, column, column-reverse</dd>
+      <dt><code>justify-content</code></dt>
+      <dd>flex-start, flex-end, center, space-between, space-around</dd>
+      <dt><code>align-items</code></dt>
+      <dd>flex-start, flex-end, center, stretch, baseline</dd>
+      <dt><code>flex-wrap</code></dt>
+      <dd>nowrap, wrap, wrap-reverse</dd>
+      <dt><code>flex</code></dt>
+      <dd>Shorthand for flex-grow, flex-shrink, flex-basis</dd>
+      <dt><code>gap</code></dt>
+      <dd>Space between flex or grid items</dd>
+      <dt><code>display: grid</code></dt>
+      <dd>Creates a grid container</dd>
+      <dt><code>grid-template-columns</code>, <code>grid-template-rows</code></dt>
+      <dd>Track definitions</dd>
+      <dt><code>grid-column</code>, <code>grid-row</code></dt>
+      <dd>Item placement</dd>
+    </dl>
+
+    <h4>Typography</h4>
+    <dl>
+      <dt><code>font</code></dt>
+      <dd>Shorthand for style, variant, weight, size/line-height, family</dd>
+      <dt><code>font-family</code></dt>
+      <dd>A stack of fallback faces</dd>
+      <dt><code>font-size</code></dt>
+      <dd>Size of the text</dd>
+      <dt><code>font-weight</code></dt>
+      <dd>normal, bold, or 100–900</dd>
+      <dt><code>line-height</code></dt>
+      <dd>Vertical rhythm</dd>
+      <dt><code>letter-spacing</code></dt>
+      <dd>Space between letters</dd>
+      <dt><code>word-spacing</code></dt>
+      <dd>Space between words</dd>
+      <dt><code>text-align</code></dt>
+      <dd>left, right, center, justify</dd>
+      <dt><code>text-decoration</code></dt>
+      <dd>underline, overline, line-through, none</dd>
+      <dt><code>text-transform</code></dt>
+      <dd>uppercase, lowercase, capitalize</dd>
+      <dt><code>text-shadow</code></dt>
+      <dd>Offset, blur, colour</dd>
+      <dt><code>color</code></dt>
+      <dd>Text colour</dd>
+    </dl>
+
+    <h4>Visual Effects &amp; Animation</h4>
+    <dl>
+      <dt><code>background</code></dt>
+      <dd>Shorthand for colour, image, position, size, repeat</dd>
+      <dt><code>background-color</code></dt>
+      <dd>Solid colour</dd>
+      <dt><code>background-image</code></dt>
+      <dd><code>url()</code> or gradient</dd>
+      <dt><code>background-size</code></dt>
+      <dd>cover, contain, or explicit dimensions</dd>
+      <dt><code>background-position</code></dt>
+      <dd>Where the image sits</dd>
+      <dt><code>border-radius</code></dt>
+      <dd>Rounded corners</dd>
+      <dt><code>box-shadow</code></dt>
+      <dd>Drop or inset shadow</dd>
+      <dt><code>opacity</code></dt>
+      <dd>0 to 1</dd>
+      <dt><code>filter</code></dt>
+      <dd>blur, brightness, contrast, grayscale, etc.</dd>
+      <dt><code>transform</code></dt>
+      <dd>rotate, scale, skew, translate</dd>
+      <dt><code>transform-origin</code></dt>
+      <dd>Pivot point for transforms</dd>
+      <dt><code>transition</code></dt>
+      <dd>Animated change between states</dd>
+      <dt><code>animation</code></dt>
+      <dd>Keyframe-driven animation</dd>
+    </dl>
+
+    <h4>Values &amp; Functions</h4>
+    <dl>
+      <dt><code>px</code></dt>
+      <dd>Absolute pixel</dd>
+      <dt><code>em</code></dt>
+      <dd>Relative to font-size (compounds)</dd>
+      <dt><code>rem</code></dt>
+      <dd>Relative to root font-size (does not compound)</dd>
+      <dt><code>%</code></dt>
+      <dd>Relative to the parent</dd>
+      <dt><code>vh</code>, <code>vw</code></dt>
+      <dd>Viewport height/width percentages</dd>
+      <dt><code>hsl()</code>, <code>rgb()</code></dt>
+      <dd>Colour notations</dd>
+      <dt><code>calc()</code></dt>
+      <dd>Arithmetic across units</dd>
+      <dt><code>var()</code></dt>
+      <dd>Read a custom property</dd>
+    </dl>
+
+    <h3>Appendix B — Selector Cheat Sheet</h3>
+    <dl>
+      <dt><code>*</code></dt>
+      <dd>Universal selector — matches every element</dd>
+      <dt><code>div</code></dt>
+      <dd>Type selector — matches every <code>div</code></dd>
+      <dt><code>.class</code></dt>
+      <dd>Class selector — matches elements with that class</dd>
+      <dt><code>#id</code></dt>
+      <dd>ID selector — matches the element with that ID</dd>
+      <dt><code>[attr]</code></dt>
+      <dd>Attribute present</dd>
+      <dt><code>[attr="value"]</code></dt>
+      <dd>Attribute equals value</dd>
+      <dt><code>A B</code></dt>
+      <dd>Descendant combinator — B inside A</dd>
+      <dt><code>A &gt; B</code></dt>
+      <dd>Child combinator — B directly inside A</dd>
+      <dt><code>A + B</code></dt>
+      <dd>Adjacent sibling combinator — B immediately after A</dd>
+      <dt><code>A ~ B</code></dt>
+      <dd>General sibling combinator — any B after A</dd>
+      <dt><code>:hover</code>, <code>:focus</code>, <code>:active</code></dt>
+      <dd>User-action pseudo-classes</dd>
+      <dt><code>:first-child</code>, <code>:last-child</code>, <code>:nth-child(n)</code></dt>
+      <dd>Structural pseudo-classes</dd>
+      <dt><code>:not(selector)</code></dt>
+      <dd>Negation pseudo-class</dd>
+      <dt><code>::before</code>, <code>::after</code></dt>
+      <dd>Generated content</dd>
+      <dt><code>::first-letter</code>, <code>::first-line</code></dt>
+      <dd>Text fragment pseudo-elements</dd>
+    </dl>
+
+    <h3>Appendix C — Further Reading</h3>
+    <ul>
+      <li><strong>MDN Web Docs</strong> — the comprehensive reference for every CSS property and selector.</li>
+      <li><strong>CSS-Tricks</strong> — tutorials, guides, and the famous "A Complete Guide to Flexbox" and "A Complete Guide to Grid."</li>
+      <li><strong>Can I Use</strong> — browser support tables for every CSS feature.</li>
+      <li><strong>W3C CSS Specifications</strong> — the official standards.</li>
+      <li><strong>"CSS Notes for Professionals"</strong> — the original community-compiled notes from Stack Overflow Documentation, from which this book was adapted.</li>
+    </ul>
+  </div>
+
+  <div class="book-nav">
+    <button class="nav-button" data-nav="prev">← Glossary</button>
+    <button class="nav-button" data-nav="next">Back Cover →</button>
+  </div>
+</section>
+
+
+   
+<!-- ============================================================
+     BACK COVER
+     ============================================================ -->
+<section id="back" class="book-page cover-page back-cover">
+  <div class="cover-content">
+    <h2>The End… Or Just the Beginning?</h2>
+    <p>You have walked through the whole language — from the first <code>link</code> to the last <code>transform</code>.</p>
+    <p>But the best way to learn CSS is to <b>keep building</b>. Write a page. Break it. Fix it. Try again.</p>
+    <p class="closing-line">Happy styling!</p>
+    <p class="cover-note">Refactored from <em>CSS Notes for Professionals</em>, compiled from Stack Overflow Documentation, with gratitude for the community's collective expertise. All mistakes in the retelling are the adapter's own.</p>
+    <p class="cover-credit">
+      Refactored &amp; illustrated by<br>
+      <a href="https://agunechemba.name.ng" target="_blank" rel="noopener">Agunechemba Ekene</a>
+    </p>
+  </div>
+<div class="book-nav">
+  <button class="nav-button" data-nav="prev">← Appendix</button>
+  <button class="nav-button" data-nav="first">↺ Begin Again</button>
+</div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
